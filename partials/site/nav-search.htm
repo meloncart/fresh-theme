@@ -1,4 +1,9 @@
-<form action="{{ 'shop/index'|page }}" method="get" data-control="search-autocomplete">
+<form
+    action="{{ 'shop/index'|page }}"
+    method="get"
+    data-control="search-autocomplete"
+    data-handler="catalog::onSearchAutocomplete"
+    data-request-update="{ 'shop/search-autocomplete': '=[data-autocomplete-results]' }">
     <div class="input-group position-relative">
         <input class="form-control rounded" type="search" name="search" placeholder="Search for products" autocomplete="off">
         <span class="input-group-append">

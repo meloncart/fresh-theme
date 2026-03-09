@@ -3,6 +3,7 @@ class SearchAutocomplete extends oc.ControlBase {
         this.input = this.element.querySelector('input[type="search"]');
         this.resultsContainer = this.element.querySelector('[data-autocomplete-results]');
         this.debounceTimer = null;
+        this.handler = this.config.handler;
     }
 
     connect() {
@@ -61,14 +62,12 @@ class SearchAutocomplete extends oc.ControlBase {
         }
     }
 
-    fetchResults(term) {
-        oc.request(this.element, 'catalog::onSearchAutocomplete', {
-            data: { term: term },
-            update: { 'site/search-autocomplete': '[data-autocomplete-results]' },
-            handleErrorMessage: false
-        }).then(() => {
-            this.open();
+    async fetchResults(term) {
+        await oc.request(this.element, this.handler, {
+            data: { term: term }
         });
+
+        this.open();
     }
 
     open() {
