@@ -13,6 +13,7 @@
 @import "controls/star-rating.css";
 @import "controls/search-autocomplete.css";
 @import "controls/cart-flyout.css";
+@import "controls/cart-page.css";
 
 /* Elements */
 @import "elements/animations.css";

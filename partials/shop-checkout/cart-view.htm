@@ -7,15 +7,6 @@
             <div class="border-bottom">
                 {% partial 'shop-checkout/cart-list' %}
             </div>
-            <div class="text-end">
-                <a
-                    href="javascript:;"
-                    data-request="onUpdateCart"
-                    data-request-update="{ 'shop-checkout/cart-view': '#cartPartial', 'shop-checkout/mini-cart': '#miniCart' }"
-                    class="btn btn-link">
-                    <small>Update Cart</small>
-                </a>
-            </div>
             <div class="mt-3">
                 {% partial 'shop-checkout/shipping-estimator' %}
             </div>

@@ -1,24 +1,13 @@
-#cartFlyout {
-    --bs-offcanvas-width: 560px;
-}
-
-.control-cart-flyout {
-    .min-width-0 {
-        min-width: 0;
-    }
-
-    .control-quantity-input {
-        max-width: 100px;
-
-        .quantity-field {
-            text-align: center;
-        }
-    }
-
+.control-cart-page {
     .bundle-child-item {
         background-color: rgba(0, 0, 0, 0.015);
         border-left: 3px solid var(--bs-gray-300);
         padding-left: 2rem !important;
+    }
+
+    .bundle-totals-row {
+        border-left: 3px solid var(--bs-primary);
+        background-color: var(--bs-gray-100) !important;
     }
 
     &.is-updating .cart-price {

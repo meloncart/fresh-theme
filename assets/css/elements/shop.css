@@ -53,18 +53,6 @@
     transition: all 0.2s ease;
 }
 
-/* Bundle Items - Cart & Orders */
-.bundle-child-item {
-    background-color: rgba(0, 0, 0, 0.015);
-    border-left: 3px solid var(--bs-gray-300);
-    padding-left: 2rem !important;
-}
-
-.bundle-totals-row {
-    border-left: 3px solid var(--bs-primary);
-    background-color: var(--bs-gray-100) !important;
-}
-
 /* Review Avatar */
 .avatar-lg {
     width: 48px;

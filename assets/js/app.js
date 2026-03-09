@@ -10,6 +10,7 @@ import registerPriceSlider from './controls/price-slider.js';
 import registerStarRating from './controls/star-rating.js';
 import registerSearchAutocomplete from './controls/search-autocomplete.js';
 import registerCartFlyout from './controls/cart-flyout.js';
+import registerCartPage from './controls/cart-page.js';
 
 // Register controls
 registerAlertDialog();
@@ -24,6 +25,7 @@ registerPriceSlider();
 registerStarRating();
 registerSearchAutocomplete();
 registerCartFlyout();
+registerCartPage();
 
 addEventListener('render', function() {
     // Auto Collapsed List

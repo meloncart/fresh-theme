@@ -24,6 +24,7 @@ class QuantityInput extends oc.ControlBase {
         }
 
         this.$qty.value = value;
+        this.$qty.dispatchEvent(new Event('change', { bubbles: true }));
     }
 
     onDecrementValue(ev) {
@@ -44,6 +45,7 @@ class QuantityInput extends oc.ControlBase {
         }
 
         this.$qty.value = value;
+        this.$qty.dispatchEvent(new Event('change', { bubbles: true }));
     }
 }
 
