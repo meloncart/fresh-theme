@@ -1,15 +1,15 @@
 class SearchAutocomplete extends oc.ControlBase {
     init() {
-        this.input = this.element.querySelector('input[type="search"]');
+        this.input = this.element.querySelector('input[name="search"]');
         this.resultsContainer = this.element.querySelector('[data-autocomplete-results]');
         this.debounceTimer = null;
         this.handler = this.config.handler;
     }
 
     connect() {
-        this.listen('input', 'input[type="search"]', this.onInputChange);
-        this.listen('keydown', 'input[type="search"]', this.onKeyDown);
-        this.listen('focus', 'input[type="search"]', this.onInputFocus);
+        this.listen('input', 'input[name="search"]', this.onInputChange);
+        this.listen('keydown', 'input[name="search"]', this.onKeyDown);
+        this.listen('focus', 'input[name="search"]', this.onInputFocus);
 
         this.onDocumentClickBound = this.onDocumentClick.bind(this);
         document.addEventListener('click', this.onDocumentClickBound);
