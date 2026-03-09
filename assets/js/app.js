@@ -8,6 +8,7 @@ import registerCheckoutForm from './controls/checkout-form.js';
 import registerProductForm from './controls/product-form.js';
 import registerPriceSlider from './controls/price-slider.js';
 import registerStarRating from './controls/star-rating.js';
+import registerSearchAutocomplete from './controls/search-autocomplete.js';
 
 // Register controls
 registerAlertDialog();
@@ -20,6 +21,7 @@ registerCheckoutForm();
 registerProductForm();
 registerPriceSlider();
 registerStarRating();
+registerSearchAutocomplete();
 
 addEventListener('render', function() {
     // Auto Collapsed List

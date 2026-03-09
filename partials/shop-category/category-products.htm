@@ -1,12 +1,14 @@
+{% set sessionKey = category ? category.id : 'all' %}
+
 {% if post('sort') %}
-    {% do this.session.put('cat_sort_' ~ category.id, post('sort')) %}
+    {% do this.session.put('cat_sort_' ~ sessionKey, post('sort')) %}
 {% endif %}
 {% if post('view_mode') %}
-    {% do this.session.put('cat_view_' ~ category.id, post('view_mode')) %}
+    {% do this.session.put('cat_view_' ~ sessionKey, post('view_mode')) %}
 {% endif %}
 
-{% set sortPreference = this.session.get('cat_sort_' ~ category.id, 'name') %}
-{% set viewMode = this.session.get('cat_view_' ~ category.id, 'list') %}
+{% set sortPreference = this.session.get('cat_sort_' ~ sessionKey, 'name') %}
+{% set viewMode = this.session.get('cat_view_' ~ sessionKey, 'list') %}
 
 {% set sortOptions = {
     name: 'Name',
@@ -20,17 +22,31 @@
 
 <div class="category-products">
     <form>
-        {% set products = category.listProducts({
+        {% set searchTerm = get('search')|trim %}
+
+        {% set filterOptions = {
             sort: sortPreference,
             manufacturers: post('manufacturers'),
             ratings: post('ratings'),
             priceMin: post('priceMin'),
             priceMax: post('priceMax')
-        }) %}
+        } %}
+
+        {% if searchTerm %}
+            {% set filterOptions = filterOptions|merge({ search: searchTerm }) %}
+        {% endif %}
+
+        {% if category %}
+            {% set products = category.listProducts(filterOptions) %}
+        {% else %}
+            {% set products = catalog.productQuery.listFrontEnd(filterOptions) %}
+        {% endif %}
 
         <div class="d-flex justify-content-between align-items-center mb-3">
             <div class="flex-grow-1">
-                <p class="m-0">Found <strong>{{ products.total }}</strong> products</p>
+                <p class="m-0">
+                    Found <strong>{{ products.total }}</strong> products
+                </p>
             </div>
             <div>
                 {% for optionKey, optionName in viewModeOptions %}
@@ -51,7 +67,9 @@
                     data-request="onAjax"
                     data-request-update="{ _self: true }">
                     {% for optionKey, optionName in sortOptions %}
-                        <option value="{{ optionKey }}" {{ sortPreference == optionKey ? 'selected' : '' }}>{{ optionName }}</option>
+                        <option value="{{ optionKey }}" {{ sortPreference == optionKey ? 'selected' : '' }}>
+                            {{ optionName }}
+                        </option>
                     {% endfor %}
                 </select>
             </div>
@@ -68,7 +86,11 @@
         {% else %}
             <div class="border rounded text-center py-5">
                 <p class="mb-0 text-muted">
-                    This category does not contain any products.
+                    {% if searchTerm %}
+                        No products found for "{{ searchTerm }}".
+                    {% else %}
+                        No products found in this category.
+                    {% endif %}
                 </p>
             </div>
         {% endif %}

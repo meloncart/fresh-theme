@@ -1,4 +1,8 @@
-{% set priceRange = category.priceRange() %}
+{% if category %}
+    {% set priceRange = category.priceRange() %}
+{% else %}
+    {% set priceRange = catalog.priceRange() %}
+{% endif %}
 {% set cur = currency() %}
 {% if priceRange.max > priceRange.min %}
     <div

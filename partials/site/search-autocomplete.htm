@@ -1,0 +1,53 @@
+{% if searchProducts is not empty %}
+    <ul class="list-unstyled mb-0">
+        {% for product in searchProducts %}
+            <li>
+                <a href="{{ product.pageUrl('shop/product') }}" class="d-flex align-items-center px-3 py-2 text-decoration-none text-reset search-autocomplete-item">
+                    <div class="flex-shrink-0 me-3">
+                        {% if product.images is not empty %}
+                            <img
+                                src="{{ product.images.first|resize(40, 40, { mode: 'crop' }) }}"
+                                alt="{{ product.name }}"
+                                width="40"
+                                height="40"
+                                class="rounded"
+                            />
+                        {% else %}
+                            <img
+                                src="{{ 'assets/images/default-post.png'|theme }}"
+                                width="40"
+                                height="40"
+                                class="rounded"
+                            />
+                        {% endif %}
+                    </div>
+                    <div class="flex-grow-1 min-width-0">
+                        <div class="text-truncate fw-medium">
+                            {{ product.name }}
+                        </div>
+                        <div class="text-muted small">
+                            <span>
+                                {{ product.final_sale_price|currency }}
+                            </span>
+                            {% if product.on_sale %}
+                                <span class="text-decoration-line-through ms-1">
+                                    {{ product.final_price|currency }}
+                                </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="border-top px-3 py-2">
+        <a href="{{ 'shop/index'|page }}?search={{ searchTerm|url_encode }}" class="text-decoration-none small">
+            View all results for "{{ searchTerm }}"
+            <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+    </div>
+{% elseif searchTerm %}
+    <div class="px-3 py-3 text-muted small text-center">
+        No products found for "{{ searchTerm }}"
+    </div>
+{% endif %}

@@ -1,0 +1,23 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item">
+            <a href="{{ 'shop/index'|page }}">
+                Home
+            </a>
+        </li>
+        {% if searchTerm %}
+            <li class="breadcrumb-item">
+                <a href="{{ 'shop/index'|page }}">
+                    Shop
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                Search: {{ searchTerm }}
+            </li>
+        {% else %}
+            <li class="breadcrumb-item active" aria-current="page">
+                Shop
+            </li>
+        {% endif %}
+    </ol>
+</nav>

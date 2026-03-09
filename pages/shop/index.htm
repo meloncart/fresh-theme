@@ -1,15 +1,46 @@
 ##
 url = "/shop"
 layout = "default"
-title = "Shop Homepage"
+title = "Shop"
+meta_title = "Shop"
 
 [cart]
 [catalog]
 
 [resources]
+css[] = "pages/category.css"
 vars[activeNavLink] = 'shop'
 ==
-{% set firstCategory = catalog.allCategories|first %}
-{% if firstCategory %}
-    {% do redirect('shop/category'|page({ fullslug: firstCategory.fullslug, baseid: firstCategory.baseid })) %}
-{% endif %}
+{% set searchTerm = get('search')|trim %}
+
+<div class="container container-padded">
+    <div class="mb-4">
+        {% partial 'shop/breadcrumb-shop' searchTerm=searchTerm %}
+    </div>
+
+    <div class="row gx-10" data-control="catalog-form">
+        <aside class="col-lg-3 col-md-4 mb-6 mb-md-0">
+            {% partial 'shop-category/sidebar-categories' %}
+            {% partial 'shop-category/sidebar-manufacturers' %}
+            {% partial 'shop-category/sidebar-price' %}
+            {% partial 'shop-category/sidebar-rating' %}
+        </aside>
+        <section class="col-lg-9 col-md-8">
+            <div class="card category-header mb-4">
+                <div class="card-body p-9">
+                    <h1 class="mb-0 fs-1">
+                        {% if searchTerm %}
+                            Search: {{ searchTerm }}
+                        {% else %}
+                            All Products
+                        {% endif %}
+                    </h1>
+                </div>
+            </div>
+
+            <div id="categoryProducts">
+                {% ajaxPartial 'shop-category/category-products' %}
+            </div>
+        </section>
+    </div>
+</div>

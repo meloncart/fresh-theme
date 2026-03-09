@@ -1,10 +1,11 @@
-<form action="{{ 'search'|page }}" method="get">
-    <div class="input-group">
-        <input class="form-control rounded" type="search" name="term" placeholder="Search for products">
+<form action="{{ 'shop/index'|page }}" method="get" data-control="search-autocomplete">
+    <div class="input-group position-relative">
+        <input class="form-control rounded" type="search" name="search" placeholder="Search for products" autocomplete="off">
         <span class="input-group-append">
             <button class="btn bg-white border border-start-0 ms-n10 rounded-0 rounded-end" type="submit">
                 <i class="bi bi-search"></i>
             </button>
         </span>
+        <div data-autocomplete-results class="search-autocomplete-results d-none"></div>
     </div>
 </form>

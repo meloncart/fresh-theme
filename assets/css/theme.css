@@ -11,6 +11,7 @@
 @import "controls/quantity-input.css";
 @import "controls/price-slider.css";
 @import "controls/star-rating.css";
+@import "controls/search-autocomplete.css";
 
 /* Elements */
 @import "elements/animations.css";

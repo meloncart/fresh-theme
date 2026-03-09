@@ -5,6 +5,13 @@
             Categories
         </h5>
         <ul class="nav nav-category" id="categoryCollapseMenu">
+            <li class="nav-item border-bottom w-100">
+                <a
+                    class="nav-link {{ not category ? 'active' }}"
+                    href="{{ 'shop/index'|page }}">
+                    All Products
+                </a>
+            </li>
             {% for cat in allCategories %}
                 {% set hasChildren = cat.children is not empty %}
                 {% set collapseId = 'categoryCollapse' ~ cat.id %}
