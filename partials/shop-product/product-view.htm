@@ -33,21 +33,15 @@
             {% endif %}
             {% set variant = product.use_variants ? product.resolveVariantSafe(postedOptions) : null %}
 
+            {% set item = variant ?: product %}
             <div class="fs-4">
-                {% if product.use_variants %}
-                    {% if variant %}
-                        <span class="fw-bold text-dark">{{ variant.getDisplayPrice(1)|currency }}</span>
-                        {% if variant.on_sale %}
-                            <span class="text-decoration-line-through text-muted">{{ variant.getDisplayEffectivePrice()|currency }}</span>
-                        {% endif %}
-                    {% else %}
-                        <span class="fw-bold text-dark">{{ product.final_sale_price|currency }}</span>
-                    {% endif %}
-                {% else %}
-                    <span class="fw-bold text-dark">{{ product.final_sale_price|currency }}</span>
-                    {% if product.on_sale %}
-                        <span class="text-decoration-line-through text-muted">{{ product.final_price|currency }}</span>
-                    {% endif %}
+                <span class="fw-bold text-dark">
+                    {{ item.final_sale_price|currency }}
+                </span>
+                {% if item.on_sale %}
+                    <span class="text-decoration-line-through text-muted">
+                        {{ item.final_price|currency }}
+                    </span>
                 {% endif %}
             </div>
 

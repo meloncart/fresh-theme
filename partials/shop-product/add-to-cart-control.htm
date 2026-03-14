@@ -2,12 +2,9 @@
     <tbody>
         <tr>
             <td>
+                {% set item = (variant is defined and variant) ? variant : product %}
                 <span class="product-price">
-                    {% if variant is defined and variant %}
-                        {{ variant.getDisplayPrice(1)|currency }}
-                    {% else %}
-                        {{ product.final_sale_price|currency }}
-                    {% endif %}
+                    {{ item.final_sale_price|currency }}
                 </span>
             </td>
             <td class="cart-symbol">x</td>
