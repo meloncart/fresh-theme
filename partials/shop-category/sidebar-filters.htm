@@ -1,0 +1,28 @@
+{% if category %}
+    {% set facets = category.availableFilters() %}
+{% endif %}
+{% if facets is not empty %}
+    {% for facet in facets %}
+        <div class="mb-8">
+            <h5 class="mb-3">
+                {{ facet.name }}
+            </h5>
+            {% for item in facet.values %}
+                <div class="form-check mb-2">
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value="{{ item.value }}"
+                        id="filter_{{ facet.code }}_{{ loop.index }}"
+                        data-filter-facet="{{ facet.code }}">
+                    <label class="form-check-label" for="filter_{{ facet.code }}_{{ loop.index }}">
+                        {{ item.value }}
+                        <small class="text-muted">
+                            ({{ item.count }})
+                        </small>
+                    </label>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+{% endif %}
