@@ -2,21 +2,21 @@
     <ol class="breadcrumb mb-0">
         <li class="breadcrumb-item">
             <a href="{{ 'shop/index'|page }}">
-                Home
+                {{ 'Home'|_ }}
             </a>
         </li>
         {% if searchTerm %}
             <li class="breadcrumb-item">
                 <a href="{{ 'shop/index'|page }}">
-                    Shop
+                    {{ 'Shop'|_ }}
                 </a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">
-                Search: {{ searchTerm }}
+                {{ 'Search:'|_ }} {{ searchTerm }}
             </li>
         {% else %}
             <li class="breadcrumb-item active" aria-current="page">
-                Shop
+                {{ 'Shop'|_ }}
             </li>
         {% endif %}
     </ol>

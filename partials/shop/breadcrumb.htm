@@ -1,6 +1,6 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb mb-0">
-        <li class="breadcrumb-item"><a href="{{ 'shop/index'|page }}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{{ 'shop/index'|page }}">{{ 'Home'|_ }}</a></li>
         {% for category in object.breadcrumbPath %}
             <li class="breadcrumb-item">
                 <a href="{{ category.pageUrl('shop/category') }}">{{ category.name }}</a>

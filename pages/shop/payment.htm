@@ -22,8 +22,8 @@ isDefault = 1
             <div class="container">
 
                 <div class="mb-4">
-                    <p class="mb-1">Order #{{ order.order_number }}</p>
-                    <h2>Thank you for being a customer, {{ order.billing_first_name }}!</h2>
+                    <p class="mb-1">{{ 'Order'|_ }} #{{ order.order_number }}</p>
+                    <h2>{{ 'Thank you for being a customer,'|_ }} {{ order.billing_first_name }}!</h2>
                 </div>
 
                 <div class="card mb-2">

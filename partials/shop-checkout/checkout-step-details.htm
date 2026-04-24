@@ -14,7 +14,7 @@
         {% if checkout.user %}
             <div class="alert alert-light d-flex align-items-center" role="alert">
                 <p class="mb-0">
-                    Bill to
+                    {{ 'Bill to'|_ }}
                     <strong>{{ checkout.user.full_name }}, {{ checkout.user.email }}</strong>
                 </p>
                 <div class="ms-auto small">

@@ -2,44 +2,44 @@
 
 <li class="nav-item">
     <a class="nav-link {{ activeNavLink == 'home' ? 'active' }}" href="{{ 'index'|page }}">
-        Home
+        {{ 'Home'|_ }}
     </a>
 </li>
 <li class="nav-item">
     <a class="nav-link {{ activeNavLink == 'shop' ? 'active' }}" href="{{ 'shop/index'|page }}">
-        Shop
+        {{ 'Shop'|_ }}
     </a>
 </li>
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle {{ activeNavLink == 'account' ? 'active' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Account
+        {{ 'Account'|_ }}
     </a>
     {% if session.user %}
         <ul class="dropdown-menu">
             <li>
                 <a class="dropdown-item" href="{{ 'account/index'|page }}">
-                    Profile Details
+                    {{ 'Profile Details'|_ }}
                 </a>
             </li>
             <li>
                 <a class="dropdown-item" href="{{ 'account/orders'|page }}">
-                    My Orders
+                    {{ 'My Orders'|_ }}
                 </a>
             </li>
             <li>
                 <a class="dropdown-item" href="{{ 'account/addresses'|page }}">
-                    My Addresses
+                    {{ 'My Addresses'|_ }}
                 </a>
             </li>
             <li>
                 <a class="dropdown-item" href="{{ 'account/security'|page }}">
-                    Account Security
+                    {{ 'Account Security'|_ }}
                 </a>
             </li>
             <li><hr class="dropdown-divider"></li>
             <li>
                 <a class="dropdown-item" href="#" data-request="onLogout">
-                    Logout
+                    {{ 'Logout'|_ }}
                 </a>
             </li>
         </ul>
@@ -47,17 +47,17 @@
         <ul class="dropdown-menu">
             <li>
                 <a class="dropdown-item" href="{{ 'account/login'|page }}">
-                    Sign In
+                    {{ 'Sign In'|_ }}
                 </a>
             </li>
             <li>
                 <a class="dropdown-item" href="{{ 'account/register'|page }}">
-                    Register
+                    {{ 'Register'|_ }}
                 </a>
             </li>
             <li>
                 <a class="dropdown-item" href="{{ 'account/password'|page }}">
-                    Forgot Password
+                    {{ 'Forgot Password'|_ }}
                 </a>
             </li>
         </ul>
@@ -65,6 +65,6 @@
 </li>
 <li class="nav-item">
     <a class="nav-link {{ activeNavLink == 'contact' ? 'active' }}" href="{{ 'contact'|page }}">
-        Contact
+        {{ 'Contact'|_ }}
     </a>
 </li>
