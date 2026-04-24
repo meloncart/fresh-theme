@@ -6,7 +6,7 @@
                 <div class="text-center position-relative">
                     {% if product.on_sale %}
                         <div class="position-absolute top-0 start-0">
-                            <span class="badge bg-danger">On Sale!</span>
+                            <span class="badge bg-danger">{{ 'On Sale!'|_ }}</span>
                         </div>
                     {% endif %}
                     <a href="{{ product.pageUrl('shop/product') }}">
@@ -43,7 +43,7 @@
                             data-request-update="{ 'shop-checkout/mini-cart': '#miniCart' }"
                             data-request-flash
                             class="btn btn-primary btn-sm">
-                            Add to Cart
+                            {{ 'Add to Cart'|_ }}
                         </button>
                     </div>
                 </div>

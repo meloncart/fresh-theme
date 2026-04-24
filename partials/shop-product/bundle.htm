@@ -1,6 +1,6 @@
 {% if product.bundle_items is not empty %}
 <div class="product-bundle">
-    <h5 class="mb-3">Components</h5>
+    <h5 class="mb-3">{{ 'Components'|_ }}</h5>
     <div class="list-group">
         {% for bundleItem in product.bundle_items %}
             <div class="list-group-item bundle-slot" id="bundleSlot{{ bundleItem.id }}">
@@ -12,7 +12,7 @@
                         {% endif %}
                     </div>
                     {% if bundleItem.is_required %}
-                        <span class="badge bg-secondary small">Required</span>
+                        <span class="badge bg-secondary small">{{ 'Required'|_ }}</span>
                     {% endif %}
                 </div>
                 {% partial 'shop-product/bundle-item-products' bundleItem=bundleItem %}

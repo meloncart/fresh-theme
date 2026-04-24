@@ -1,6 +1,6 @@
 {% set hasAttributes = product.properties is not empty or product.weight or product.height or product.width or product.depth %}
 {% if hasAttributes %}
-    <h4 class="my-4">Technical Details</h4>
+    <h4 class="my-4">{{ 'Technical Details'|_ }}</h4>
     {% if product.properties is not empty %}
         <table class="table table-striped m-0">
             <tbody>
@@ -22,16 +22,16 @@
                     {% if product.weight %}
                         <tr>
                             <td class="p-3">
-                                <h5 class="small fw-bold mb-1">Weight</h5>
-                                <p class="m-0">{{ product.weight }} Grams</p>
+                                <h5 class="small fw-bold mb-1">{{ 'Weight'|_ }}</h5>
+                                <p class="m-0">{{ product.weight }} {{ 'Grams'|_ }}</p>
                             </td>
                         </tr>
                     {% endif %}
                     {% if product.height %}
                         <tr>
                             <td class="p-3">
-                                <h5 class="small fw-bold mb-1">Height</h5>
-                                <p class="m-0">{{ product.height }} Millimeters</p>
+                                <h5 class="small fw-bold mb-1">{{ 'Height'|_ }}</h5>
+                                <p class="m-0">{{ product.height }} {{ 'Millimeters'|_ }}</p>
                             </td>
                         </tr>
                     {% endif %}
@@ -44,16 +44,16 @@
                     {% if product.width %}
                         <tr>
                             <td class="p-3">
-                                <h5 class="small fw-bold mb-1">Width</h5>
-                                <p class="m-0">{{ product.width }} Millimeters</p>
+                                <h5 class="small fw-bold mb-1">{{ 'Width'|_ }}</h5>
+                                <p class="m-0">{{ product.width }} {{ 'Millimeters'|_ }}</p>
                             </td>
                         </tr>
                     {% endif %}
                     {% if product.depth %}
                         <tr>
                             <td class="p-3">
-                                <h5 class="small fw-bold mb-1">Depth</h5>
-                                <p class="m-0">{{ product.depth }} Millimeters</p>
+                                <h5 class="small fw-bold mb-1">{{ 'Depth'|_ }}</h5>
+                                <p class="m-0">{{ product.depth }} {{ 'Millimeters'|_ }}</p>
                             </td>
                         </tr>
                     {% endif %}

@@ -1,11 +1,11 @@
 <div class="d-flex align-items-center mb-2">
     <div>
-        <h4 class="h5 m-0">Contact Details</h4>
+        <h4 class="h5 m-0">{{ 'Contact Details'|_ }}</h4>
     </div>
     {% if not checkout.user %}
         <div class="ms-auto small">
-            Already have an account?
-            <a href="{{ 'account/login'|page }}">Sign in first</a>
+            {{ 'Already have an account?'|_ }}
+            <a href="{{ 'account/login'|page }}">{{ 'Sign in first'|_ }}</a>
         </div>
     {% endif %}
 </div>
@@ -18,7 +18,7 @@
                     <strong>{{ checkout.user.full_name }}, {{ checkout.user.email }}</strong>
                 </p>
                 <div class="ms-auto small">
-                    <a href="#" data-request="onLogout">Logout</a>
+                    <a href="#" data-request="onLogout">{{ 'Logout'|_ }}</a>
                 </div>
             </div>
         {% else %}
@@ -29,14 +29,14 @@
                     type="text"
                     class="form-control"
                     value="{{ address.email }}"
-                    placeholder="Email Address"
+                    placeholder="{{ 'Email Address'|_ }}"
                     required />
-                <label>Email Address</label>
+                <label>{{ 'Email Address'|_ }}</label>
             </div>
             <div class="form-check mb-3">
                 <label class="form-check-label">
                     <input class="form-check-input" type="checkbox" name="register_customer" value="1">
-                    <div class="small">Save my details for faster checkout</div>
+                    <div class="small">{{ 'Save my details for faster checkout'|_ }}</div>
                 </label>
                 <input type="hidden" name="customer_auto_login" value="1" />
                 <input type="hidden" name="customer_register_notification" value="1" />
@@ -45,14 +45,14 @@
     </div>
 </div>
 {% if shippingRequired %}
-    <h4>Shipping Details</h4>
+    <h4>{{ 'Shipping Details'|_ }}</h4>
     <p class="small">
-        Please enter your shipping name and address.
+        {{ 'Please enter your shipping name and address.'|_ }}
     </p>
 {% else %}
-    <h4>Billing Details</h4>
+    <h4>{{ 'Billing Details'|_ }}</h4>
     <p class="small">
-        Please enter your billing name and address.
+        {{ 'Please enter your billing name and address.'|_ }}
     </p>
 {% endif %}
 <div class="row g-3">
@@ -60,7 +60,7 @@
         <div class="col-12">
             <div class="form-floating">
                 {% partial 'account/select-address' user=checkout.user addressBookId=address.address_book_id %}
-                <label>Address Book</label>
+                <label>{{ 'Address Book'|_ }}</label>
             </div>
         </div>
     {% endif %}
@@ -70,10 +70,10 @@
                 name="first_name"
                 type="text"
                 class="form-control"
-                placeholder="First Name"
+                placeholder="{{ 'First Name'|_ }}"
                 value="{{ address.first_name }}"
                 required />
-            <label>First Name</label>
+            <label>{{ 'First Name'|_ }}</label>
         </div>
     </div>
     <div class="col-6">
@@ -82,10 +82,10 @@
                 name="last_name"
                 type="text"
                 class="form-control"
-                placeholder="Last Name"
+                placeholder="{{ 'Last Name'|_ }}"
                 value="{{ address.last_name }}"
                 required />
-            <label>Last Name</label>
+            <label>{{ 'Last Name'|_ }}</label>
         </div>
     </div>
     <div class="col-12">
@@ -95,8 +95,8 @@
                 type="text"
                 class="form-control"
                 value="{{ address.company_name }}"
-                placeholder="Business Name (optional)" />
-            <label>Business Name (optional)</label>
+                placeholder="{{ 'Business Name (optional)'|_ }}" />
+            <label>{{ 'Business Name (optional)'|_ }}</label>
         </div>
     </div>
     <div class="col-12">
@@ -106,8 +106,8 @@
                 type="text"
                 class="form-control"
                 value="{{ address.address_line1 }}"
-                placeholder="Address" />
-            <label>Address</label>
+                placeholder="{{ 'Address'|_ }}" />
+            <label>{{ 'Address'|_ }}</label>
         </div>
     </div>
     <div class="col-md-6">
@@ -117,8 +117,8 @@
                 type="text"
                 class="form-control"
                 value="{{ address.city }}"
-                placeholder="City" />
-            <label>City</label>
+                placeholder="{{ 'City'|_ }}" />
+            <label>{{ 'City'|_ }}</label>
         </div>
     </div>
     <div class="col-md-6">
@@ -128,20 +128,20 @@
                 type="text"
                 class="form-control"
                 value="{{ address.zip }}"
-                placeholder="Zip / Postal Code" />
-            <label>Zip / Postal Code</label>
+                placeholder="{{ 'Zip / Postal Code'|_ }}" />
+            <label>{{ 'Zip / Postal Code'|_ }}</label>
         </div>
     </div>
     <div class="col-12">
         <div class="form-floating">
             {% partial 'account/select-country' countryId=address.country_id %}
-            <label>Country</label>
+            <label>{{ 'Country'|_ }}</label>
         </div>
     </div>
     <div class="col-12">
         <div class="form-floating">
             {% partial 'account/select-state' countryId=address.country_id stateId=address.state_id %}
-            <label>State</label>
+            <label>{{ 'State'|_ }}</label>
         </div>
     </div>
     <div class="col-12">
@@ -151,8 +151,8 @@
             type="text"
             class="form-control"
             value="{{ address.phone }}"
-            placeholder="Phone" />
-            <label>Phone</label>
+            placeholder="{{ 'Phone'|_ }}" />
+            <label>{{ 'Phone'|_ }}</label>
         </div>
     </div>
 </div>

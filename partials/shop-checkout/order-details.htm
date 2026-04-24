@@ -2,11 +2,11 @@
 <div class="row">
     <div class="col-6">
         <div class="mb-4">
-            <h6 class="fw-bold">Contact Details</h6>
+            <h6 class="fw-bold">{{ 'Contact Details'|_ }}</h6>
             <p>{{ order.billing_email }}</p>
         </div>
         <div class="mb-4">
-            <h6 class="fw-bold">Shipping Address</h6>
+            <h6 class="fw-bold">{{ 'Shipping Address'|_ }}</h6>
             <p>
                 {{ order.shipping_first_name }} {{ order.shipping_last_name }}<br />
                 {{ order.shipping_address_line1 }}<br />
@@ -19,7 +19,7 @@
             </p>
         </div>
         <div class="mb-4">
-            <h6 class="fw-bold">Shipping Method</h6>
+            <h6 class="fw-bold">{{ 'Shipping Method'|_ }}</h6>
             <p>
                 {{ order.shipping_method.name }}
             </p>
@@ -27,13 +27,13 @@
     </div>
     <div class="col-6">
         <div class="mb-4">
-            <h6 class="fw-bold">Payment Method</h6>
+            <h6 class="fw-bold">{{ 'Payment Method'|_ }}</h6>
             <p>
                 {{ order.payment_method.name }}
             </p>
         </div>
         <div class="mb-4">
-            <h6 class="fw-bold">Billing Address</h6>
+            <h6 class="fw-bold">{{ 'Billing Address'|_ }}</h6>
             <p>
                 {{ order.billing_first_name }} {{ order.billing_last_name }}<br />
                 {{ order.billing_address_line1 }}<br />

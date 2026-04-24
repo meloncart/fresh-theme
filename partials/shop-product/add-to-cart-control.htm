@@ -17,15 +17,15 @@
                     data-request-update="{ 'shop-checkout/mini-cart': '#miniCart' }"
                     data-request-flash
                     class="btn btn-primary">
-                    Add to Cart
+                    {{ 'Add to Cart'|_ }}
                 </button>
             </td>
         </tr>
     </tbody>
     <tfoot>
         <tr>
-            <td colspan="2">Price</td>
-            <td colspan="2">Quantity</td>
+            <td colspan="2">{{ 'Price'|_ }}</td>
+            <td colspan="2">{{ 'Quantity'|_ }}</td>
         </tr>
     </tfoot>
 </table>

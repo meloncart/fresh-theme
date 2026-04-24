@@ -7,7 +7,7 @@
             data-bs-toggle="collapse"
             data-bs-target=".estimator-collapse"
         >
-            Estimate Shipping Cost
+            {{ 'Estimate Shipping Cost'|_ }}
         </button>
     </div>
 
@@ -25,7 +25,7 @@
                     type="text"
                     class="form-control"
                     value="{{ address.zip }}"
-                    placeholder="Zip Code" />
+                    placeholder="{{ 'Zip Code'|_ }}" />
             </div>
             <div class="col-3">
                 <button
@@ -36,7 +36,7 @@
                     data-attach-loading
                     data-request-flash
                     type="submit">
-                    Estimate
+                    {{ 'Estimate'|_ }}
                 </button>
             </div>
         </div>
@@ -46,7 +46,7 @@
 {% else %}
     <div class="py-3">
         {% if availableOptions is not empty %}
-            <p>The following shipping options are available:</p>
+            <p>{{ 'The following shipping options are available:'|_ }}</p>
             <ul class="list-group">
                 {% for option in availableOptions %}
                     <li class="list-group-item d-flex justify-content-between">
@@ -55,7 +55,7 @@
                         </div>
                         <div>
                             {% if option.isFree %}
-                                Free
+                                {{ 'Free'|_ }}
                             {% else %}
                                 {{ option.quote|currency }}
                             {% endif %}
@@ -64,7 +64,7 @@
                 {% endfor %}
             </ul>
         {% else %}
-            <p>There are no shipping options available for your location.</p>
+            <p>{{ 'There are no shipping options available for your location.'|_ }}</p>
         {% endif %}
     </div>
 {% endif %}

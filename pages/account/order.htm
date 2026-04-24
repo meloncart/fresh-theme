@@ -23,7 +23,7 @@ vars[activeSubLink] = 'orders'
     <a
         href="{{ 'account/orders'|page }}"
         class="btn btn-link ps-0 text-reset text-decoration-none">
-        <i class="bi bi-chevron-left"></i> Back to Orders
+        <i class="bi bi-chevron-left"></i> {{ 'Back to Orders'|_ }}
     </a>
 </div>
 
@@ -54,14 +54,14 @@ vars[activeSubLink] = 'orders'
                         <i class="bi bi-bag-x text-danger" style="font-size:32px"></i>
                     </div>
                     <div>
-                        <h5 class="cart-title m-0">This Order is Unpaid</h5>
+                        <h5 class="cart-title m-0">{{ 'This Order is Unpaid'|_ }}</h5>
                     </div>
                     <div class="ms-auto">
                         {% if order.invoice %}
                             <a
                                 href="{{ 'shop/payment'|page({ hash: order.invoice.hash }) }}"
                                 class="btn btn-dark">
-                                Pay Now
+                                {{ 'Pay Now'|_ }}
                             </a>
                         {% endif %}
                     </div>
@@ -74,7 +74,7 @@ vars[activeSubLink] = 'orders'
         <div class="card-body pb-0">
             <div class="row">
                 <div class="col-6">
-                    <h5 class="fw-bold">Shipping Address</h5>
+                    <h5 class="fw-bold">{{ 'Shipping Address'|_ }}</h5>
                     <p>
                         {{ order.shipping_first_name }} {{ order.shipping_last_name }}<br />
                         {{ order.shipping_address_line1 }}<br />
@@ -87,7 +87,7 @@ vars[activeSubLink] = 'orders'
                     </p>
                 </div>
                 <div class="col-6">
-                    <h5 class="fw-bold">Billing Address</h5>
+                    <h5 class="fw-bold">{{ 'Billing Address'|_ }}</h5>
                     <p>
                         {{ order.billing_first_name }} {{ order.billing_last_name }}<br />
                         {{ order.billing_address_line1 }}<br />
