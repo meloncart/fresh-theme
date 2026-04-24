@@ -26,12 +26,20 @@ class CatalogForm extends oc.ControlBase {
         }
 
         const filters = {};
-        this.element.querySelectorAll('[data-filter-facet]:checked').forEach(function(el) {
+        this.element.querySelectorAll('[data-filter-facet]').forEach(function(el) {
             const code = el.dataset.filterFacet;
-            if (!filters[code]) {
-                filters[code] = [];
+            let value;
+            if (el.tagName === 'SELECT') {
+                value = el.value;
+            } else if (el.checked) {
+                value = el.value;
             }
-            filters[code].push(el.value);
+            if (value) {
+                if (!filters[code]) {
+                    filters[code] = [];
+                }
+                filters[code].push(value);
+            }
         });
         if (Object.keys(filters).length) {
             data.filters = filters;
