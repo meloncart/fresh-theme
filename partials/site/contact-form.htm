@@ -52,13 +52,13 @@ function onSubmitContactForm()
 {% if isSubmit %}
     <div class="alert alert-success" role="alert">
         <h4 class="alert-heading">
-            {{ 'Thanks for getting in touch!'|_ }}
+            {{ __("Thanks for getting in touch!") }}
         </h4>
         <p>
-            {{ 'Please bear in mind we receive a lot of feedback, it may take several days to process and you may not receive a response.'|_ }}
+            {{ __("Please bear in mind we receive a lot of feedback, it may take several days to process and you may not receive a response.") }}
         </p>
         <p class="mb-0">
-            {{ 'Not to worry though, we have your email'|_ }} <strong>{{ emailAddress }}</strong>, {{ 'all feedback we receive will be read and action taken if needed.'|_ }}
+            {{ __("Not to worry though, we have your email") }} <strong>{{ emailAddress }}</strong>, {{ __("all feedback we receive will be read and action taken if needed.") }}
         </p>
     </div>
 {% else %}
@@ -69,64 +69,64 @@ function onSubmitContactForm()
         data-request-flash>
         <div class="col-md-6 mb-3">
             <label class="form-label" for="contactFirstName">
-                {{ 'First Name'|_ }}
+                {{ __("First Name") }}
                 <span class="text-danger">
                     *
                 </span>
             </label>
-            <input type="text" id="contactFirstName" class="form-control" name="first_name" placeholder="{{ 'Enter your first name'|_ }}" required>
+            <input type="text" id="contactFirstName" class="form-control" name="first_name" placeholder="{{ __("Enter your first name") }}" required>
         </div>
         <div class="col-md-6 mb-3">
             <label class="form-label" for="contactLastName">
-                {{ 'Last Name'|_ }}
+                {{ __("Last Name") }}
             </label>
-            <input type="text" id="contactLastName" class="form-control" name="last_name" placeholder="{{ 'Enter your last name'|_ }}">
+            <input type="text" id="contactLastName" class="form-control" name="last_name" placeholder="{{ __("Enter your last name") }}">
         </div>
         <div class="col-md-12 mb-3">
             <label class="form-label" for="contactCompany">
-                {{ 'Company'|_ }}
+                {{ __("Company") }}
                 <span class="text-danger">
                     *
                 </span>
             </label>
-            <input type="text" id="contactCompany" class="form-control" name="company" placeholder="{{ 'Your company'|_ }}" required>
+            <input type="text" id="contactCompany" class="form-control" name="company" placeholder="{{ __("Your company") }}" required>
         </div>
         <div class="col-md-12 mb-3">
             <label class="form-label" for="contactTitle">
-                {{ 'Title'|_ }}
+                {{ __("Title") }}
             </label>
-            <input type="text" id="contactTitle" class="form-control" name="title" placeholder="{{ 'Your title'|_ }}">
+            <input type="text" id="contactTitle" class="form-control" name="title" placeholder="{{ __("Your title") }}">
         </div>
         <div class="col-md-6 mb-3">
             <label class="form-label" for="contactEmail">
-                {{ 'Email'|_ }}
+                {{ __("Email") }}
                 <span class="text-danger">
                     *
                 </span>
             </label>
-            <input type="email" id="contactEmail" class="form-control" name="email" placeholder="{{ 'Enter your email'|_ }}" required>
+            <input type="email" id="contactEmail" class="form-control" name="email" placeholder="{{ __("Enter your email") }}" required>
         </div>
         <div class="col-md-6 mb-3">
             <label class="form-label" for="contactPhone">
-                {{ 'Phone'|_ }}
+                {{ __("Phone") }}
             </label>
-            <input type="text" id="contactPhone" class="form-control" name="phone" placeholder="{{ 'Your phone number'|_ }}">
+            <input type="text" id="contactPhone" class="form-control" name="phone" placeholder="{{ __("Your phone number") }}">
         </div>
         <div class="col-md-12 mb-3">
             <label class="form-label" for="contactComments">
-                {{ 'Comments'|_ }}
+                {{ __("Comments") }}
                 <span class="text-danger">
                     *
                 </span>
             </label>
-            <textarea rows="3" id="contactComments" class="form-control" name="comments" placeholder="{{ 'Additional comments'|_ }}"></textarea>
+            <textarea rows="3" id="contactComments" class="form-control" name="comments" placeholder="{{ __("Additional comments") }}"></textarea>
         </div>
         <div class="col-md-12">
             <button
                 type="submit"
                 data-attach-loading
                 class="btn btn-primary">
-                {{ 'Submit'|_ }}
+                {{ __("Submit") }}
             </button>
         </div>
     </form>

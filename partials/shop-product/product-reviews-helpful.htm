@@ -1,14 +1,14 @@
 {% if reviews.hasVoted(review.id) %}
     <span class="text-muted opacity-50">
         <i class="bi bi-hand-thumbs-up me-1"></i>
-        {{ 'Helpful'|_ }}
+        {{ __("Helpful") }}
         {% if review.helpful_count > 0 %}
             ({{ review.helpful_count }})
         {% endif %}
     </span>
     <span class="text-muted opacity-50 ms-4">
         <i class="bi bi-hand-thumbs-down me-1"></i>
-        {{ 'Not Helpful'|_ }}
+        {{ __("Not Helpful") }}
         {% if review.not_helpful_count > 0 %}
             ({{ review.not_helpful_count }})
         {% endif %}
@@ -21,7 +21,7 @@
         data-request-data="review_id: {{ review.id }}"
         data-request-update="shop-product/product-reviews-helpful: '#reviewVote{{ review.id }}'">
         <i class="bi bi-hand-thumbs-up me-1"></i>
-        {{ 'Helpful'|_ }}
+        {{ __("Helpful") }}
         {% if review.helpful_count > 0 %}
             ({{ review.helpful_count }})
         {% endif %}
@@ -33,7 +33,7 @@
         data-request-data="review_id: {{ review.id }}"
         data-request-update="shop-product/product-reviews-helpful: '#reviewVote{{ review.id }}'">
         <i class="bi bi-hand-thumbs-down me-1"></i>
-        {{ 'Not Helpful'|_ }}
+        {{ __("Not Helpful") }}
         {% if review.not_helpful_count > 0 %}
             ({{ review.not_helpful_count }})
         {% endif %}

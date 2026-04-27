@@ -10,7 +10,7 @@
                 </p>
                 {% if address.is_default %}
                     <span class="badge bg-primary">
-                        {{ 'Default address'|_ }}
+                        {{ __("Default address") }}
                     </span>
                 {% else %}
                     <a
@@ -19,7 +19,7 @@
                         data-request-update="{ 'account/address-list': '#accountAddressList' }"
                         data-request-data="{ address_id: '{{ address.id }}', is_default: true }"
                         class="link-primary">
-                        <small>{{ 'Set as Default'|_ }}</small>
+                        <small>{{ __("Set as Default") }}</small>
                     </a>
                 {% endif %}
                 <div class="mt-2">
@@ -31,16 +31,16 @@
                         data-request-data="{ address_id: '{{ address.id }}' }"
                         data-bs-toggle="modal"
                         data-bs-target="#siteModal">
-                        <small>{{ 'Edit'|_ }}</small>
+                        <small>{{ __("Edit") }}</small>
                     </a>
                     <a
                         href="#"
                         data-request="onUpdateAddress"
-                        data-request-confirm="{{ 'Are you sure you want to delete this address?'|_ }}"
+                        data-request-confirm="{{ __("Are you sure you want to delete this address?") }}"
                         data-request-update="{ 'account/address-list': '#accountAddressList' }"
                         data-request-data="{ address_id: '{{ address.id }}', address_delete: true }"
                         class="text-danger ms-3">
-                        <small>{{ 'Delete'|_ }}</small>
+                        <small>{{ __("Delete") }}</small>
                     </a>
                 </div>
             </div>

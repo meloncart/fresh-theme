@@ -18,7 +18,7 @@ vars[activeSubLink] = 'addresses'
 <div class="page-account">
     <div class="d-flex justify-content-between mb-4">
         <h2 class="mb-0">
-            {{ 'Address Book'|_ }}
+            {{ __("Address Book") }}
         </h2>
         {% if hasAddresses %}
             <a
@@ -28,7 +28,7 @@ vars[activeSubLink] = 'addresses'
                 data-request-update="{ 'account/popup-account-address': '#siteModalContent' }"
                 data-bs-toggle="modal"
                 data-bs-target="#siteModal">
-                {{ 'Add a new address'|_ }}
+                {{ __("Add a new address") }}
             </a>
         {% endif %}
     </div>
@@ -38,7 +38,7 @@ vars[activeSubLink] = 'addresses'
         {% else %}
             <div class="text-center">
                 <i class="bi bi-map text-secondary" style="font-size:70px"></i>
-                <p style="margin-top:-1rem">{{ 'No addresses yet'|_ }}</p>
+                <p style="margin-top:-1rem">{{ __("No addresses yet") }}</p>
                 <a
                     href="#"
                     class="btn btn-outline-primary mt-2"
@@ -46,7 +46,7 @@ vars[activeSubLink] = 'addresses'
                     data-request-update="{ 'account/popup-account-address': '#siteModalContent' }"
                     data-bs-toggle="modal"
                     data-bs-target="#siteModal">
-                    {{ 'Add your first address'|_ }}
+                    {{ __("Add your first address") }}
                 </a>
             </div>
         {% endif %}

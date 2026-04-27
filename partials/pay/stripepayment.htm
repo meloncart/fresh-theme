@@ -1,12 +1,12 @@
 {% set hiddenFields = paymentMethod.getHiddenFields(invoice) %}
 
-<p>{{ 'Click the button below to pay using Stripe'|_ }}</p>
+<p>{{ __("Click the button below to pay using Stripe") }}</p>
 
 <form id="stripe-payment-form" method="post" data-request="onPay" data-request-flash>
     {% for name, value in hiddenFields %}
         <input type="hidden" name="{{ name }}" value="{{ value }}"/>
     {% endfor %}
-    <input type="submit" class="btn btn-lg btn-primary w-100" value="{{ 'Pay with Stripe'|_ }}" />
+    <input type="submit" class="btn btn-lg btn-primary w-100" value="{{ __("Pay with Stripe") }}" />
 </form>
 
 <script>

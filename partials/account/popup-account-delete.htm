@@ -8,13 +8,13 @@
 
     <div class="modal-header">
         <h5 class="modal-title h4">
-            {{ 'Delete account'|_ }}
+            {{ __("Delete account") }}
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
     </div>
     <div class="modal-body">
         <p>
-            {{ 'Are you sure you want to permanently delete your account? Please enter your password to confirm.'|_ }}
+            {{ __("Are you sure you want to permanently delete your account? Please enter your password to confirm.") }}
         </p>
 
         <div>
@@ -24,19 +24,19 @@
                 type="password"
                 value=""
                 class="form-control"
-                placeholder="{{ 'Password'|_ }}"
+                placeholder="{{ __("Password") }}"
             />
         </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-            {{ 'Cancel'|_ }}
+            {{ __("Cancel") }}
         </button>
         <button
             class="btn btn-danger"
             data-attach-loading
             type="submit">
-            {{ 'Delete account'|_ }}
+            {{ __("Delete account") }}
         </button>
     </div>
 

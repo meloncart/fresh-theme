@@ -2,14 +2,14 @@
 {% if allCategories %}
     <div class="mb-8">
         <h5 class="mb-3">
-            {{ 'Categories'|_ }}
+            {{ __("Categories") }}
         </h5>
         <ul class="nav nav-category" id="categoryCollapseMenu">
             <li class="nav-item border-bottom w-100">
                 <a
                     class="nav-link {{ not category ? 'active' }}"
                     href="{{ 'shop/index'|page }}">
-                    {{ 'All Products'|_ }}
+                    {{ __("All Products") }}
                 </a>
             </li>
             {% for cat in allCategories %}

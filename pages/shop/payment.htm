@@ -22,8 +22,8 @@ isDefault = 1
             <div class="container">
 
                 <div class="mb-4">
-                    <p class="mb-1">{{ 'Order'|_ }} #{{ order.order_number }}</p>
-                    <h2>{{ 'Thank you for being a customer,'|_ }} {{ order.billing_first_name }}!</h2>
+                    <p class="mb-1">{{ __("Order") }} #{{ order.order_number }}</p>
+                    <h2>{{ __("Thank you for being a customer,") }} {{ order.billing_first_name }}!</h2>
                 </div>
 
                 <div class="card mb-2">
@@ -34,8 +34,8 @@ isDefault = 1
                                     <i class="bi bi-bag-check text-success" style="font-size:32px"></i>
                                 </div>
                                 <div>
-                                    <h5 class="cart-title">{{ 'Your Order is Confirmed'|_ }}</h5>
-                                    <p class="card-text small">{{ 'We have processed your payment and have accepted your order.'|_ }}</p>
+                                    <h5 class="cart-title">{{ __("Your Order is Confirmed") }}</h5>
+                                    <p class="card-text small">{{ __("We have processed your payment and have accepted your order.") }}</p>
                                 </div>
                             </div>
                         {% elseif invoice.is_payment_submitted %}
@@ -44,8 +44,8 @@ isDefault = 1
                                     <i class="bi bi-hourglass-split text-info" style="font-size:32px"></i>
                                 </div>
                                 <div>
-                                    <h5 class="cart-title">{{ 'Your Payment is Being Processed'|_ }}</h5>
-                                    <p class="card-text small">{{ 'Your payment has been submitted and is awaiting confirmation. No further action is needed.'|_ }}</p>
+                                    <h5 class="cart-title">{{ __("Your Payment is Being Processed") }}</h5>
+                                    <p class="card-text small">{{ __("Your payment has been submitted and is awaiting confirmation. No further action is needed.") }}</p>
                                 </div>
                             </div>
                         {% else %}
@@ -54,8 +54,8 @@ isDefault = 1
                                     <i class="bi bi-clock text-secondary" style="font-size:32px"></i>
                                 </div>
                                 <div>
-                                    <h5 class="cart-title">{{ 'Your Order is Pending'|_ }}</h5>
-                                    <p class="card-text small">{{ 'Please use a payment method below to complete this order.'|_ }}</p>
+                                    <h5 class="cart-title">{{ __("Your Order is Pending") }}</h5>
+                                    <p class="card-text small">{{ __("Please use a payment method below to complete this order.") }}</p>
                                 </div>
                             </div>
                         {% endif %}
@@ -64,7 +64,7 @@ isDefault = 1
 
                 <div class="card mb-2">
                     <div class="card-body pb-0">
-                        <h5 class="cart-title mb-4">{{ 'Order Details'|_ }}</h5>
+                        <h5 class="cart-title mb-4">{{ __("Order Details") }}</h5>
                         <div id="shopOrderDetails">
                             {% partial 'shop-checkout/order-details' %}
                         </div>
@@ -74,11 +74,11 @@ isDefault = 1
                 {% if not order.is_payment_processed and not invoice.is_payment_submitted %}
                     <div class="card mb-2">
                         <div class="card-body py-3">
-                            <h5 class="cart-title m-0">{{ 'Payment Method'|_ }}</h5>
+                            <h5 class="cart-title m-0">{{ __("Payment Method") }}</h5>
 
                             {% if paymentMethods is empty %}
                                 <div class="alert alert-light mt-3 mb-0" role="alert">
-                                    {{ 'Sorry, there are no payment methods available.'|_ }}
+                                    {{ __("Sorry, there are no payment methods available.") }}
                                 </div>
                             {% endif %}
                         </div>

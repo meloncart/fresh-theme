@@ -7,7 +7,7 @@
             <!-- Categories -->
             <div class="col-12 col-lg-4">
                 <h6 class="mb-4">
-                    {{ 'Categories'|_ }}
+                    {{ __("Categories") }}
                 </h6>
                 {% set categories = catalog.allCategories %}
                 {% if categories %}
@@ -44,53 +44,53 @@
                 <div class="row g-4">
                     <div class="col-6 col-md-3">
                         <h6 class="mb-4">
-                            {{ 'Get to Know Us'|_ }}
+                            {{ __("Get to Know Us") }}
                         </h6>
                         <ul class="nav flex-column">
                             <li class="nav-item mb-2">
                                 <a href="{{ 'index'|page }}" class="nav-link">
-                                    {{ 'Home'|_ }}
+                                    {{ __("Home") }}
                                 </a>
                             </li>
                             <li class="nav-item mb-2">
                                 <a href="{{ 'shop/index'|page }}" class="nav-link">
-                                    {{ 'Shop'|_ }}
+                                    {{ __("Shop") }}
                                 </a>
                             </li>
                             <li class="nav-item mb-2">
                                 <a href="{{ 'contact'|page }}" class="nav-link">
-                                    {{ 'Contact'|_ }}
+                                    {{ __("Contact") }}
                                 </a>
                             </li>
                         </ul>
                     </div>
                     <div class="col-6 col-md-3">
                         <h6 class="mb-4">
-                            {{ 'For Consumers'|_ }}
+                            {{ __("For Consumers") }}
                         </h6>
                         <ul class="nav flex-column">
                             <li class="nav-item mb-2">
                                 <a href="{{ 'account/index'|page }}" class="nav-link">
-                                    {{ 'Account'|_ }}
+                                    {{ __("Account") }}
                                 </a>
                             </li>
                             <li class="nav-item mb-2">
                                 <a href="{{ 'shop/cart'|page }}" class="nav-link">
-                                    {{ 'Cart'|_ }}
+                                    {{ __("Cart") }}
                                 </a>
                             </li>
                         </ul>
                     </div>
                     <div class="col-6 col-md-3">
                         <h6 class="mb-4">
-                            {{ 'Company'|_ }}
+                            {{ __("Company") }}
                         </h6>
                         <ul class="nav flex-column">
                         </ul>
                     </div>
                     <div class="col-6 col-md-3">
                         <h6 class="mb-4">
-                            {{ 'Resources'|_ }}
+                            {{ __("Resources") }}
                         </h6>
                         <ul class="nav flex-column">
                         </ul>
@@ -105,7 +105,7 @@
                 <div class="col-lg-5 text-lg-start text-center mb-2 mb-lg-0">
                     <ul class="list-inline mb-0">
                         <li class="list-inline-item text-dark">
-                            {{ 'Payment Partners'|_ }}
+                            {{ __("Payment Partners") }}
                         </li>
                         <li class="list-inline-item">
                             <img src="{{ 'assets/images/payment/amazonpay.svg'|theme }}" alt="Amazon Pay">
@@ -127,7 +127,7 @@
                 <div class="col-lg-7 mt-4 mt-md-0">
                     <ul class="list-inline mb-0 text-lg-end text-center">
                         <li class="list-inline-item mb-2 mb-md-0 text-dark">
-                            {{ 'Get deliveries with Meloncart'|_ }}
+                            {{ __("Get deliveries with Meloncart") }}
                         </li>
                         <li class="list-inline-item ms-4">
                             <a href="https://www.apple.com/store" target="_blank">
@@ -149,13 +149,13 @@
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <span class="small text-muted">
-                        &copy; {{ "now"|date("Y") }} {{ 'Your Company Name'|_ }}. {{ 'All rights reserved.'|_ }}
+                        &copy; {{ "now"|date("Y") }} {{ __("Your Company Name") }}. {{ __("All rights reserved.") }}
                     </span>
                 </div>
                 <div class="col-md-6">
                     <ul class="list-inline text-md-end mb-0 small mt-3 mt-md-0">
                         <li class="list-inline-item text-muted">
-                            {{ 'Follow us on'|_ }}
+                            {{ __("Follow us on") }}
                         </li>
                         <li class="list-inline-item me-1">
                             <a href="https://facebook.com" target="_blank" class="btn btn-xs btn-social btn-icon">

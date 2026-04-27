@@ -1,6 +1,6 @@
 {% if order.amount_due > 0 %}
     <h4>
-        {{ 'Payment Method'|_ }}
+        {{ __("Payment Method") }}
     </h4>
 
     {% if paymentMethods is not empty %}
@@ -33,12 +33,12 @@
         </ul>
     {% else %}
         <div class="alert alert-light" role="alert">
-            {{ 'Sorry, there are no payment methods available.'|_ }}
+            {{ __("Sorry, there are no payment methods available.") }}
         </div>
     {% endif %}
 {% else %}
     <div class="alert alert-success" role="alert">
         <i class="bi bi-check-circle"></i>
-        {{ 'No payment required — your store credit covers the full amount.'|_ }}
+        {{ __("No payment required — your store credit covers the full amount.") }}
     </div>
 {% endif %}

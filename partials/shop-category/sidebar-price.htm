@@ -16,12 +16,12 @@
         class="mb-8"
     >
         <h5 class="mb-3">
-            {{ 'Price'|_ }}
+            {{ __("Price") }}
         </h5>
         <div>
             <div data-price-range-slider class="mb-3"></div>
             <small class="text-muted">
-                {{ 'Price:'|_ }}
+                {{ __("Price:") }}
             </small>
             <span data-price-range-text class="small"></span>
             <input type="hidden" data-filter-price-min value="{{ priceRange.min }}">

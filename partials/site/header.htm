@@ -7,11 +7,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-12 text-center text-md-start">
-                    <span>{{ 'Super Savings - Save more with coupons!'|_ }}</span>
+                    <span>{{ __("Super Savings - Save more with coupons!") }}</span>
                 </div>
                 <div class="col-6 text-end d-none d-md-block">
                     {% if backendUrl %}
-                        <a class="text-reset text-decoration-none me-3" href="{{ backendUrl }}" target="backend"><i class="bi bi-gear-wide-connected"></i> {{ 'Admin Panel'|_ }}</a>
+                        <a class="text-reset text-decoration-none me-3" href="{{ backendUrl }}" target="backend"><i class="bi bi-gear-wide-connected"></i> {{ __("Admin Panel") }}</a>
                     {% endif %}
                     {% if sitePicker.isEnabled %}
                         <a class="text-decoration-none text-reset dropdown-toggle" href="{{ ''|page }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -86,7 +86,7 @@
             <div class="dropdown me-3 d-none d-lg-block">
                 <button class="btn btn-primary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-grid me-1"></i>
-                    {{ 'All Departments'|_ }}
+                    {{ __("All Departments") }}
                 </button>
                 <ul class="dropdown-menu">
                     {% for category in catalog.allCategories %}
@@ -111,7 +111,7 @@
                     <div class="d-block d-lg-none mb-4">
                         <a class="btn btn-primary w-100 d-flex justify-content-center align-items-center" data-bs-toggle="collapse" href="#collapseDepartments" role="button" aria-expanded="false" aria-controls="collapseDepartments">
                             <i class="bi bi-grid me-2"></i>
-                            {{ 'All Departments'|_ }}
+                            {{ __("All Departments") }}
                         </a>
                         <div class="collapse mt-2" id="collapseDepartments">
                             <div class="card card-body">
@@ -142,7 +142,7 @@
 <div class="offcanvas offcanvas-end" tabindex="-1" id="cartFlyout">
     <div class="offcanvas-header border-bottom">
         <h5 class="offcanvas-title">
-            {{ 'Shopping Cart'|_ }}
+            {{ __("Shopping Cart") }}
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
     </div>

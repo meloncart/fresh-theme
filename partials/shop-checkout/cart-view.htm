@@ -3,7 +3,7 @@
 {% if items is not empty %}
     <div class="row gx-5">
         <div class="col-md-8">
-            <h3>{{ 'My Cart'|_ }}</h3>
+            <h3>{{ __("My Cart") }}</h3>
             <div class="border-bottom">
                 {% partial 'shop-checkout/cart-list' %}
             </div>
@@ -12,14 +12,14 @@
             </div>
         </div>
         <div class="col-md-4">
-            <h3>{{ 'Order Summary'|_ }}</h3>
+            <h3>{{ __("Order Summary") }}</h3>
             {% partial 'shop-checkout/cart-summary' %}
         </div>
     </div>
 {% else %}
-    <h3>{{ 'My Cart'|_ }}</h3>
-    <p>{{ 'Your shopping cart is empty.'|_ }}</p>
+    <h3>{{ __("My Cart") }}</h3>
+    <p>{{ __("Your shopping cart is empty.") }}</p>
     <a href="{{ 'shop/index'|page }}" class="btn btn-dark btn-pill">
-        {{ 'Continue Shopping'|_ }}
+        {{ __("Continue Shopping") }}
     </a>
 {% endif %}
