@@ -7,7 +7,7 @@
             data-request-flash
             data-attach-loading
         >
-            Place Order
+            {{ 'Place Order'|_ }}
         </button>
     </div>
 {% elseif invoice and invoice.payment_method %}
@@ -22,7 +22,7 @@
             {% if message %}
                 {{ message|raw }}
             {% else %}
-                <p>Payment method "{{ paymentMethod.name }}" has no payment form. Please pay and notify us.</p>
+                <p>{{ 'Payment method'|_ }} "{{ paymentMethod.name }}" {{ 'has no payment form. Please pay and notify us.'|_ }}</p>
             {% endif %}
         </div>
         {% if invoice.is_throwaway %}
@@ -34,7 +34,7 @@
                     data-request-flash
                     data-attach-loading
                 >
-                    Complete Order
+                    {{ 'Complete Order'|_ }}
                 </button>
             </div>
         {% endif %}

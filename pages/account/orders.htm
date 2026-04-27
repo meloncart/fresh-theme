@@ -16,7 +16,7 @@ vars[activeSubLink] = 'orders'
 ==
 <div class="page-account">
     <h2 class="mb-4">
-        My Orders
+        {{ 'My Orders'|_ }}
     </h2>
 
     {% if orders is not empty %}
@@ -24,10 +24,10 @@ vars[activeSubLink] = 'orders'
             <table class="table mb-0 text-nowrap table-centered">
                 <thead>
                     <tr>
-                        <th>Order</th>
-                        <th>Date</th>
-                        <th>Status</th>
-                        <th>Total</th>
+                        <th>{{ 'Order'|_ }}</th>
+                        <th>{{ 'Date'|_ }}</th>
+                        <th>{{ 'Status'|_ }}</th>
+                        <th>{{ 'Total'|_ }}</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -54,7 +54,7 @@ vars[activeSubLink] = 'orders'
                                     href="{{ url }}"
                                     class="text-inherit"
                                     data-bs-toggle="tooltip"
-                                    data-bs-title="View">
+                                    data-bs-title="{{ 'View'|_ }}">
                                     <i class="bi bi-eye"></i>
                                 </a>
                             </td>
@@ -71,11 +71,11 @@ vars[activeSubLink] = 'orders'
     {% else  %}
         <div class="text-center">
             <i class="bi bi-cart text-secondary" style="font-size:70px"></i>
-            <p style="margin-top:-1rem">No orders yet</p>
+            <p style="margin-top:-1rem">{{ 'No orders yet'|_ }}</p>
             <a
                 href="{{ 'shop/index'|page }}"
                 class="btn btn-outline-primary mt-2">
-                Continue shopping
+                {{ 'Continue shopping'|_ }}
             </a>
         </div>
     {% endif %}

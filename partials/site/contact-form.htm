@@ -52,13 +52,13 @@ function onSubmitContactForm()
 {% if isSubmit %}
     <div class="alert alert-success" role="alert">
         <h4 class="alert-heading">
-            Thanks for getting in touch!
+            {{ 'Thanks for getting in touch!'|_ }}
         </h4>
         <p>
-            Please bear in mind we receive a lot of feedback, it may take several days to process and you may not receive a response.
+            {{ 'Please bear in mind we receive a lot of feedback, it may take several days to process and you may not receive a response.'|_ }}
         </p>
         <p class="mb-0">
-            Not to worry though, we have your email <strong>{{ emailAddress }}</strong>, all feedback we receive will be read and action taken if needed.
+            {{ 'Not to worry though, we have your email'|_ }} <strong>{{ emailAddress }}</strong>, {{ 'all feedback we receive will be read and action taken if needed.'|_ }}
         </p>
     </div>
 {% else %}
@@ -69,64 +69,64 @@ function onSubmitContactForm()
         data-request-flash>
         <div class="col-md-6 mb-3">
             <label class="form-label" for="contactFirstName">
-                First Name
+                {{ 'First Name'|_ }}
                 <span class="text-danger">
                     *
                 </span>
             </label>
-            <input type="text" id="contactFirstName" class="form-control" name="first_name" placeholder="Enter your first name" required>
+            <input type="text" id="contactFirstName" class="form-control" name="first_name" placeholder="{{ 'Enter your first name'|_ }}" required>
         </div>
         <div class="col-md-6 mb-3">
             <label class="form-label" for="contactLastName">
-                Last Name
+                {{ 'Last Name'|_ }}
             </label>
-            <input type="text" id="contactLastName" class="form-control" name="last_name" placeholder="Enter your last name">
+            <input type="text" id="contactLastName" class="form-control" name="last_name" placeholder="{{ 'Enter your last name'|_ }}">
         </div>
         <div class="col-md-12 mb-3">
             <label class="form-label" for="contactCompany">
-                Company
+                {{ 'Company'|_ }}
                 <span class="text-danger">
                     *
                 </span>
             </label>
-            <input type="text" id="contactCompany" class="form-control" name="company" placeholder="Your company" required>
+            <input type="text" id="contactCompany" class="form-control" name="company" placeholder="{{ 'Your company'|_ }}" required>
         </div>
         <div class="col-md-12 mb-3">
             <label class="form-label" for="contactTitle">
-                Title
+                {{ 'Title'|_ }}
             </label>
-            <input type="text" id="contactTitle" class="form-control" name="title" placeholder="Your title">
+            <input type="text" id="contactTitle" class="form-control" name="title" placeholder="{{ 'Your title'|_ }}">
         </div>
         <div class="col-md-6 mb-3">
             <label class="form-label" for="contactEmail">
-                Email
+                {{ 'Email'|_ }}
                 <span class="text-danger">
                     *
                 </span>
             </label>
-            <input type="email" id="contactEmail" class="form-control" name="email" placeholder="Enter your email" required>
+            <input type="email" id="contactEmail" class="form-control" name="email" placeholder="{{ 'Enter your email'|_ }}" required>
         </div>
         <div class="col-md-6 mb-3">
             <label class="form-label" for="contactPhone">
-                Phone
+                {{ 'Phone'|_ }}
             </label>
-            <input type="text" id="contactPhone" class="form-control" name="phone" placeholder="Your phone number">
+            <input type="text" id="contactPhone" class="form-control" name="phone" placeholder="{{ 'Your phone number'|_ }}">
         </div>
         <div class="col-md-12 mb-3">
             <label class="form-label" for="contactComments">
-                Comments
+                {{ 'Comments'|_ }}
                 <span class="text-danger">
                     *
                 </span>
             </label>
-            <textarea rows="3" id="contactComments" class="form-control" name="comments" placeholder="Additional comments"></textarea>
+            <textarea rows="3" id="contactComments" class="form-control" name="comments" placeholder="{{ 'Additional comments'|_ }}"></textarea>
         </div>
         <div class="col-md-12">
             <button
                 type="submit"
                 data-attach-loading
                 class="btn btn-primary">
-                Submit
+                {{ 'Submit'|_ }}
             </button>
         </div>
     </form>

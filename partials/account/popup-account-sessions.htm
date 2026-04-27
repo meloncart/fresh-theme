@@ -8,13 +8,13 @@
 
     <div class="modal-header">
         <h5 class="modal-title h4">
-            Log out of all other devices
+            {{ 'Log out of all other devices'|_ }}
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
     </div>
     <div class="modal-body">
         <p>
-            Please enter your password to confirm you would like to log out of your other browser sessions across all of your devices.
+            {{ 'Please enter your password to confirm you would like to log out of your other browser sessions across all of your devices.'|_ }}
         </p>
 
         <div>
@@ -24,19 +24,19 @@
                 type="password"
                 value=""
                 class="form-control"
-                placeholder="Password"
+                placeholder="{{ 'Password'|_ }}"
             />
         </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-            Cancel
+            {{ 'Cancel'|_ }}
         </button>
         <button
             class="btn btn-danger"
             data-attach-loading
             type="submit">
-            Log out other devices
+            {{ 'Log out other devices'|_ }}
         </button>
     </div>
 

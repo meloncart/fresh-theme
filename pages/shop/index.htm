@@ -30,9 +30,9 @@ vars[activeNavLink] = 'shop'
                 <div class="card-body p-9">
                     <h1 class="mb-0 fs-1">
                         {% if searchTerm %}
-                            Search: {{ searchTerm }}
+                            {{ 'Search:'|_ }} {{ searchTerm }}
                         {% else %}
-                            All Products
+                            {{ 'All Products'|_ }}
                         {% endif %}
                     </h1>
                 </div>

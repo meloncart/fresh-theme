@@ -1,4 +1,4 @@
-<h4>Shipping Method</h4>
+<h4>{{ 'Shipping Method'|_ }}</h4>
 
 {% if hasShippingAddress %}
     {% if shippingMethods is not empty %}
@@ -43,7 +43,7 @@
                             </div>
                             <div class="small ms-auto fw-bold">
                                 {% if method.isFree %}
-                                    Free
+                                    {{ 'Free'|_ }}
                                 {% else %}
                                     {{ method.quote|currency }}
                                 {% endif %}
@@ -55,11 +55,11 @@
         </ul>
     {% else %}
         <div class="alert alert-light" role="alert">
-            There are no shipping methods available for your location.
+            {{ 'There are no shipping methods available for your location.'|_ }}
         </div>
     {% endif %}
 {% else %}
     <div class="alert alert-light" role="alert">
-        Enter your shipping address to view available shipping methods.
+        {{ 'Enter your shipping address to view available shipping methods.'|_ }}
     </div>
 {% endif %}

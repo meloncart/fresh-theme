@@ -11,9 +11,9 @@
 {% set viewMode = this.session.get('cat_view_' ~ sessionKey, 'list') %}
 
 {% set sortOptions = {
-    name: 'Name',
-    'price desc': 'Price (high to low)',
-    'price asc': 'Price (low to high)'
+    name: 'Name'|_,
+    'price desc': 'Price (high to low)'|_,
+    'price asc': 'Price (low to high)'|_
 } %}
 {% set viewModeOptions = {
     list: 'bi bi-list-ul',
@@ -45,7 +45,7 @@
         <div class="d-flex justify-content-between align-items-center mb-3">
             <div class="flex-grow-1">
                 <p class="m-0">
-                    Found <strong>{{ products.total }}</strong> products
+                    {{ 'Found'|_ }} <strong>{{ products.total }}</strong> {{ 'products'|_ }}
                 </p>
             </div>
             <div>
@@ -87,9 +87,9 @@
             <div class="border rounded text-center py-5">
                 <p class="mb-0 text-muted">
                     {% if searchTerm %}
-                        No products found for "{{ searchTerm }}".
+                        {{ 'No products found for'|_ }} "{{ searchTerm }}".
                     {% else %}
-                        No products found in this category.
+                        {{ 'No products found in this category.'|_ }}
                     {% endif %}
                 </p>
             </div>
