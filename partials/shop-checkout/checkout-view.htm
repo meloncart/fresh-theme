@@ -18,7 +18,7 @@
                             <a
                                 href="{{ 'shop/cart'|page }}"
                                 class="btn btn-link ps-0">
-                                <i class="bi bi-chevron-left"></i> Back to Shopping Cart
+                                <i class="bi bi-chevron-left"></i> {{ __("Back to Shopping Cart") }}
                             </a>
                             <button
                                 type="submit "
@@ -28,7 +28,7 @@
                                 data-attach-loading
                                 data-request-flash
                                 class="btn btn-lg btn-primary">
-                                Continue to Shipping
+                                {{ __("Continue to Shipping") }}
                             </button>
                         </div>
                     {% elseif checkoutStep == 'shipping' %}
@@ -43,7 +43,7 @@
                                 data-request-data="{ checkout_step: 'details', skip_validation: true }"
                                 data-request-update="{ 'shop-checkout/checkout-view': '#shopCheckoutView' }"
                                 class="btn btn-link">
-                                <i class="bi bi-chevron-left"></i> Return to Details
+                                <i class="bi bi-chevron-left"></i> {{ __("Return to Details") }}
                             </a>
                             <a
                                 href="#"
@@ -53,7 +53,7 @@
                                 data-attach-loading
                                 data-request-flash
                                 class="btn btn-lg btn-primary">
-                                Continue to Payment
+                                {{ __("Continue to Payment") }}
                             </a>
                         </div>
                     {% elseif checkoutStep == 'payment' %}
@@ -71,7 +71,7 @@
                                 data-request-data="{ checkout_step: 'shipping', skip_validation: true }"
                                 data-request-update="{ 'shop-checkout/checkout-view': '#shopCheckoutView' }"
                                 class="btn btn-link">
-                                <i class="bi bi-chevron-left"></i> Return to Shipping
+                                <i class="bi bi-chevron-left"></i> {{ __("Return to Shipping") }}
                             </a>
                         </div>
                     {% endif %}

@@ -18,7 +18,7 @@ vars[activeNavLink] = 'home'
 
     <!-- Root Categories -->
     <div class="mb-5">
-        <h2 class="mb-4">See Our Full Range of Products</h2>
+        <h2 class="mb-4">{{ __("See Our Full Range of Products") }}</h2>
         {% set categories = catalog.allCategories %}
         {% if categories %}
             <div data-control="card-slider" data-slider-type="category" class="control-card-slider">
@@ -30,7 +30,7 @@ vars[activeNavLink] = 'home'
             </div>
         {% else %}
             <div class="alert alert-warning" role="alert">
-                <p class="mb-0">There are no visible categories found. Please create some categories on the <strong>Shop → Categories</strong> page.</p>
+                <p class="mb-0">{{ __("There are no visible categories found. Please create some categories on the") }} <strong>Shop → Categories</strong> {{ __("page.") }}</p>
             </div>
         {% endif %}
     </div>
@@ -40,8 +40,8 @@ vars[activeNavLink] = 'home'
     </div>
 
     <div class="mb-5">
-        <h2 class="mt-3 mb-1">Featured Products</h2>
-        <p class="mb-4">The best products from our catalog</p>
+        <h2 class="mt-3 mb-1">{{ __("Featured Products") }}</h2>
+        <p class="mb-4">{{ __("The best products from our catalog") }}</p>
         {% partial 'shop/custom-group' groupCode='featured-products' %}
     </div>
 

@@ -7,7 +7,7 @@
         <div class="me-lg-5 mb-6 mb-md-0">
             <div class="mb-5">
                 <h4 class="mb-3">
-                    Customer Reviews
+                    {{ __("Customer Reviews") }}
                 </h4>
                 {% if totalReviews > 0 %}
                     <span>
@@ -16,12 +16,12 @@
                             {{ avgRating|number_format(1) }} out of 5
                         </span>
                         <small class="ms-3">
-                            {{ totalReviews }} {{ totalReviews == 1 ? 'review' : 'reviews' }}
+                            {{ totalReviews }} {{ totalReviews == 1 ? __("review") : __("reviews") }}
                         </small>
                     </span>
                 {% else %}
                     <p class="text-muted mb-0">
-                        No reviews yet.
+                        {{ __("No reviews yet.") }}
                     </p>
                 {% endif %}
             </div>
@@ -66,13 +66,13 @@
             {% if reviews.canReview %}
                 <div class="d-grid">
                     <h4>
-                        Review this product
+                        {{ __("Review this product") }}
                     </h4>
                     <p class="mb-0">
-                        Share your thoughts with other customers.
+                        {{ __("Share your thoughts with other customers.") }}
                     </p>
                     <a href="#reviewForm" class="btn btn-outline-secondary mt-4">
-                        Write a Review
+                        {{ __("Write a Review") }}
                     </a>
                 </div>
             {% endif %}
@@ -84,7 +84,7 @@
             <div class="mb-10">
                 <div class="mb-8">
                     <h4>
-                        Reviews
+                        {{ __("Reviews") }}
                     </h4>
                 </div>
                 {% for review in reviewsList %}
@@ -103,7 +103,7 @@
                         </div>
                         <div class="ms-3 flex-grow-1">
                             <h6 class="mb-1">
-                                {{ review.user ? review.user.full_name : 'Anonymous' }}
+                                {{ review.user ? review.user.full_name : __("Anonymous") }}
                             </h6>
                             <p class="small">
                                 <span class="text-muted">
@@ -111,7 +111,7 @@
                                 </span>
                                 {% if review.is_verified_purchase %}
                                     <span class="text-primary ms-3 fw-bold">
-                                        Verified Purchase
+                                        {{ __("Verified Purchase") }}
                                     </span>
                                 {% endif %}
                             </p>
@@ -138,7 +138,7 @@
         {% if reviews.canReview %}
             <div id="reviewForm">
                 <h3 class="mb-3">
-                    Create Review
+                    {{ __("Create Review") }}
                 </h3>
                 <div class="border rounded p-3" id="reviewFormContent">
                     {% partial 'shop-product/product-review-form' %}

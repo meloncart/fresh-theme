@@ -9,19 +9,19 @@
     <input type="hidden" name="message" value="false" />
 
     <div class="section-title border-bottom d-flex">
-        <h5 class="h4 flex-grow-1">Name</h5>
+        <h5 class="h4 flex-grow-1">{{ __("Name") }}</h5>
         <button
             type="button"
             class="btn btn-outline-secondary btn-sm"
             data-bs-toggle="collapse"
             data-bs-target=".{{ collapseClass }}">
-            Edit
+            {{ __("Edit") }}
         </button>
     </div>
 
     <div class="editor-view collapse show {{ collapseClass }}">
         <div class="d-flex">
-            <label class="text-success flex-grow-1">Your real name</label>
+            <label class="text-success flex-grow-1">{{ __("Your real name") }}</label>
             <div class="field-value">
                 {{ user.first_name }} {{ user.last_name }}
             </div>
@@ -36,7 +36,7 @@
                     type="text"
                     value="{{ user.first_name }}"
                     class="form-control"
-                    placeholder="First name"
+                    placeholder="{{ __("First name") }}"
                 />
             </div>
             <div class="col-6">
@@ -45,7 +45,7 @@
                     type="text"
                     value="{{ user.last_name }}"
                     class="form-control"
-                    placeholder="Last name"
+                    placeholder="{{ __("Last name") }}"
                 />
             </div>
         </div>
@@ -54,14 +54,14 @@
                 class="btn btn-primary"
                 data-attach-loading
                 type="submit">
-                Save
+                {{ __("Save") }}
             </button>
             <button
                 class="btn btn-link"
                 data-bs-toggle="collapse"
                 data-bs-target=".{{ collapseClass }}"
                 type="reset">
-                Cancel
+                {{ __("Cancel") }}
             </button>
         </div>
     </div>

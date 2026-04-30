@@ -28,20 +28,20 @@ vars[activeNavLink] = 'account'
 
                     <div class="text-center">
                         <p class="mt-5 mb-1 text-body-secondary">
-                            New user?
+                            {{ __("New user?") }}
                             <a href="{{ 'account/register'|page }}">
-                                Create a new account
+                                {{ __("Create a new account") }}
                             </a>
                         </p>
 
                         {% if authentication.usePasswordRecovery %}
                             <p class="mt-1 mb-3 text-body-secondary">
-                                Lost password?
+                                {{ __("Lost password?") }}
                                 <a
                                     href="#"
                                     data-bs-toggle="collapse"
                                     data-bs-target=".login-collapse">
-                                    Recover password
+                                    {{ __("Recover password") }}
                                 </a>
                             </p>
                         {% endif %}
@@ -55,12 +55,12 @@ vars[activeNavLink] = 'account'
 
                     <div class="text-center">
                         <p class="mt-5 mb-3 text-body-secondary">
-                            Rememebered your password?
+                            {{ __("Remembered your password?") }}
                             <a
                                 href="#"
                                 data-bs-toggle="collapse"
                                 data-bs-target=".login-collapse">
-                                Sign in again
+                                {{ __("Sign in again") }}
                             </a>
                         </p>
                     </div>

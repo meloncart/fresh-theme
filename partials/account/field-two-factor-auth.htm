@@ -3,21 +3,21 @@
 <div>
 
     <div class="section-title border-bottom d-flex">
-        <h5 class="h4 flex-grow-1">Two factor authentication</h5>
+        <h5 class="h4 flex-grow-1">{{ __("Two factor authentication") }}</h5>
         <button
             type="button"
             class="btn btn-outline-secondary btn-sm"
             data-bs-toggle="collapse"
             data-bs-target=".{{ collapseClass }}">
-            Edit
+            {{ __("Edit") }}
         </button>
     </div>
 
     <div class="editor-view collapse {{ not isVisible ? 'show' }} {{ collapseClass }}">
         <div class="d-flex">
-            <label class="text-success flex-grow-1">Status</label>
+            <label class="text-success flex-grow-1">{{ __("Status") }}</label>
             <div class="field-value">
-                {{ account.twoFactorEnabled ? 'Enabled' : 'Disabled' }}
+                {{ account.twoFactorEnabled ? __("Enabled") : __("Disabled") }}
             </div>
         </div>
     </div>
@@ -26,8 +26,7 @@
         {% if account.twoFactorEnabled %}
             {% if showRecoveryCodes %}
                 <p>
-                    Store these recovery codes in a secure password manager.
-                    They are single-use codes that can be used to access your account if your two factor authentication device is lost.
+                    {{ __("Store these recovery codes in a secure password manager. They are single-use codes that can be used to access your account if your two factor authentication device is lost.") }}
                 </p>
                 <ul class="list-group mb-3">
                     {% for code in account.twoFactorRecoveryCodes%}
@@ -40,27 +39,27 @@
                     data-request="onRegenerateTwoFactorRecoveryCodes"
                     data-request-update="{ _self: true }"
                     type="button">
-                    Regenerate recovery codes
+                    {{ __("Regenerate recovery codes") }}
                 </button>
             {% else %}
-                <p>You have enabled two factor authentication.</p>
+                <p>{{ __("You have enabled two factor authentication.") }}</p>
                 <button
                     class="btn btn-secondary"
                     data-attach-loading
                     data-request="onShowTwoFactorRecoveryCodes"
                     data-request-update="{ _self: true }"
                     type="button">
-                    Show recovery codes
+                    {{ __("Show recovery codes") }}
                 </button>
             {% endif %}
             <button
                 class="btn btn-danger"
                 data-attach-loading
                 data-request="onDisableTwoFactor"
-                data-request-confirm="Are you sure you want to disable two factor authentication?"
+                data-request-confirm="{{ __("Are you sure you want to disable two factor authentication?") }}"
                 data-request-update="{ _self: true }"
                 type="button">
-                Disable
+                {{ __("Disable") }}
             </button>
 
         {% else %}
@@ -72,7 +71,7 @@
                     data-request-update="{ _self: true }"
                     data-request-flash>
                     <p>
-                        To enable two factor authentication, scan the following QR code using your phone's authenticator application or enter the setup key and provide the generated OTP code.
+                        {{ __("To enable two factor authentication, scan the following QR code using your phone's authenticator application or enter the setup key and provide the generated OTP code.") }}
                     </p>
                     <div class="row">
                         <div class="col-md-auto">
@@ -84,7 +83,7 @@
                             <h5 class="mb-3">Setup key: {{ user.two_factor_secret }}</h5>
                             <div class="row g-3 align-items-center">
                                 <div class="col-auto">
-                                    <label for="inputCode" class="col-form-label">Code</label>
+                                    <label for="inputCode" class="col-form-label">{{ __("Code") }}</label>
                                 </div>
                                 <div class="col-auto">
                                     <input
@@ -102,7 +101,7 @@
                                     class="btn btn-primary"
                                     data-attach-loading
                                     type="submit">
-                                    Confirm
+                                    {{ __("Confirm") }}
                                 </button>
                                 <button
                                     class="btn btn-secondary"
@@ -110,21 +109,21 @@
                                     data-request="onAjax"
                                     data-request-update="{ _self: true }"
                                     type="button">
-                                    Cancel
+                                    {{ __("Cancel") }}
                                 </button>
                             </div>
                         </div>
                     </div>
                 </form>
             {% else %}
-                <p>You have not enabled two factor authentication.</p>
+                <p>{{ __("You have not enabled two factor authentication.") }}</p>
                 <button
                     class="btn btn-secondary"
                     data-attach-loading
                     data-request="onEnableTwoFactor"
                     data-request-update="{ _self: true }"
                     type="button">
-                    Enable
+                    {{ __("Enable") }}
                 </button>
             {% endif %}
 
