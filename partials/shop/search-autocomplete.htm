@@ -42,12 +42,12 @@
     </ul>
     <div class="border-top px-3 py-2">
         <a href="{{ 'shop/index'|page }}?search={{ searchTerm|url_encode }}" class="text-decoration-none small">
-            View all results for "{{ searchTerm }}"
+            {{ __("View all results for") }} "{{ searchTerm }}"
             <i class="bi bi-arrow-right ms-1"></i>
         </a>
     </div>
 {% elseif searchTerm %}
     <div class="px-3 py-3 text-muted small text-center">
-        No products found for "{{ searchTerm }}"
+        {{ __("No products found for") }} "{{ searchTerm }}"
     </div>
 {% endif %}

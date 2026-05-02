@@ -52,7 +52,7 @@
                     class="form-check-input"
                     {{ not selectedProductId and not bundleItem.is_required ? 'checked' }} />
                 <label class="form-check-label" for="bundleRadio{{ bundleItem.id }}_none">
-                    No, thank you
+                    {{ __("No, thank you") }}
                 </label>
             </div>
         {% endif %}

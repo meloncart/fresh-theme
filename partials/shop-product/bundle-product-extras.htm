@@ -16,7 +16,7 @@
                     {% if extra.display_price > 0 %}
                         <span class="text-success ms-1">+{{ extra.display_price|currency }}</span>
                     {% else %}
-                        <span class="text-success ms-1">FREE</span>
+                        <span class="text-success ms-1">{{ __("FREE") }}</span>
                     {% endif %}
                 </label>
             </div>

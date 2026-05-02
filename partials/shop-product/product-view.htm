@@ -3,7 +3,7 @@
         <div class="position-relative">
             {% if product.on_sale %}
                 <div class="position-absolute top-0 start-0" style="z-index:1000">
-                    <span class="badge bg-danger fs-6">On Sale!</span>
+                    <span class="badge bg-danger fs-6">{{ __("On Sale!") }}</span>
                 </div>
             {% endif %}
             {% partial 'shop-product/product-images' %}
@@ -64,18 +64,18 @@
                 {% if product.use_variants %}
                     {% if variant and not variant.is_enabled %}
                         <div class="alert alert-warning">
-                            This product combination is currently unavailable.
+                            {{ __("This product combination is currently unavailable.") }}
                         </div>
                     {% elseif variant and variant.isOutOfStock() and not product.allow_pre_order %}
                         <div class="alert alert-danger">
-                            This product is temporarily out of stock.
+                            {{ __("This product is temporarily out of stock.") }}
                             {% if variant.available_at %}
-                                Expected availability: <strong>{{ variant.available_at|date('M d, Y') }}</strong>
+                                {{ __("Expected availability:") }} <strong>{{ variant.available_at|date('M d, Y') }}</strong>
                             {% endif %}
                         </div>
                     {% elseif not variant %}
                         <div class="alert alert-warning">
-                            This product combination is not available.
+                            {{ __("This product combination is not available.") }}
                         </div>
                     {% else %}
                         <div class="product-panel">
@@ -98,19 +98,19 @@
     <ul class="nav nav-pills nav-line-pills" id="productTabs">
         <li class="nav-item">
             <button class="nav-link active" id="detailsTab" data-bs-toggle="tab" data-bs-target="#detailsTabPane" type="button">
-                Product Description
+                {{ __("Product Description") }}
             </button>
         </li>
         {% if hasInfo %}
             <li class="nav-item">
                 <button class="nav-link" id="infoTab" data-bs-toggle="tab" data-bs-target="#infoTabPane" type="button">
-                    Information
+                    {{ __("Information") }}
                 </button>
             </li>
         {% endif %}
         <li class="nav-item">
             <button class="nav-link" id="reviewsTab" data-bs-toggle="tab" data-bs-target="#reviewsTabPane" type="button">
-                Reviews
+                {{ __("Reviews") }}
                 {% if reviews.reviewsCount > 0 %}
                     <span class="badge bg-primary ms-1">
                         {{ reviews.reviewsCount }}
@@ -126,7 +126,7 @@
                     <p class="lead">{{ product.short_description }}</p>
                     {{ product.description|raw }}
                 {% else %}
-                    <p class="text-muted"><em>Product has no description.</em></p>
+                    <p class="text-muted"><em>{{ __("Product has no description.") }}</em></p>
                 {% endif %}
             </div>
         </div>

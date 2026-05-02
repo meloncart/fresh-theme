@@ -9,30 +9,30 @@
     <input type="hidden" name="message" value="false" />
 
     <div class="section-title border-bottom d-flex">
-        <h5 class="h4 flex-grow-1">Email</h5>
+        <h5 class="h4 flex-grow-1">{{ __("Email") }}</h5>
         <button
             type="button"
             class="btn btn-outline-secondary btn-sm"
             data-bs-toggle="collapse"
             data-bs-target=".{{ collapseClass }}">
-            Edit
+            {{ __("Edit") }}
         </button>
     </div>
 
     <div class="editor-view collapse show {{ collapseClass }}">
         <div class="d-flex">
-            <label class="text-success flex-grow-1">Your email address</label>
+            <label class="text-success flex-grow-1">{{ __("Your email address") }}</label>
             <div class="field-value">
                 {{ user.email }}
             </div>
         </div>
         <div class="d-flex">
-            <label class="text-success flex-grow-1">Status</label>
+            <label class="text-success flex-grow-1">{{ __("Status") }}</label>
             <div class="field-value">
                 {% if showLinkSent %}
-                    Pending
+                    {{ __("Pending") }}
                 {% else %}
-                    {{ user.hasVerifiedEmail ? 'Verified' : 'Unverified' }}
+                    {{ user.hasVerifiedEmail ? __("Verified") : __("Unverified") }}
                 {% endif %}
             </div>
         </div>
@@ -46,7 +46,7 @@
                     type="email"
                     value="{{ user.email }}"
                     class="form-control"
-                    placeholder="Email address"
+                    placeholder="{{ __("Email address") }}"
                 />
             </div>
         </div>
@@ -55,7 +55,7 @@
                 class="btn btn-primary"
                 data-attach-loading
                 type="submit">
-                Save
+                {{ __("Save") }}
             </button>
             {% if not user.hasVerifiedEmail %}
                 <button
@@ -66,7 +66,7 @@
                     data-request-data="{ message: null }"
                     data-request-flash
                     type="button">
-                    Verify Email
+                    {{ __("Verify Email") }}
                 </button>
             {% endif %}
             <button
@@ -74,7 +74,7 @@
                 data-bs-toggle="collapse"
                 data-bs-target=".{{ collapseClass }}"
                 type="reset">
-                Cancel
+                {{ __("Cancel") }}
             </button>
         </div>
     </div>

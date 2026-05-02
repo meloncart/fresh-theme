@@ -1,17 +1,17 @@
 {% if shippingRequired %}
     {% set steps = {
-        'cart': 'Cart',
-        'details': 'Details',
-        'shipping': 'Shipping',
-        'payment': 'Payment',
-        'complete': 'Complete',
+        'cart': __("Cart"),
+        'details': __("Details"),
+        'shipping': __("Shipping"),
+        'payment': __("Payment"),
+        'complete': __("Complete"),
     } %}
 {% else %}
     {% set steps = {
-        'cart': 'Cart',
-        'details': 'Details',
-        'payment': 'Payment',
-        'complete': 'Complete',
+        'cart': __("Cart"),
+        'details': __("Details"),
+        'payment': __("Payment"),
+        'complete': __("Complete"),
     } %}
 {% endif %}
 {% set currentFound = false %}

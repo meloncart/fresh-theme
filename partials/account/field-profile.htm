@@ -9,25 +9,25 @@
     <input type="hidden" name="message" value="false" />
 
     <div class="section-title border-bottom d-flex">
-        <h5 class="h4 flex-grow-1">Profile</h5>
+        <h5 class="h4 flex-grow-1">{{ __("Profile") }}</h5>
         <button
             type="button"
             class="btn btn-outline-secondary btn-sm"
             data-bs-toggle="collapse"
             data-bs-target=".{{ collapseClass }}">
-            Edit
+            {{ __("Edit") }}
         </button>
     </div>
 
     <div class="editor-view collapse show {{ collapseClass }}">
         <div class="d-flex">
-            <label class="text-success flex-grow-1">Your company name</label>
+            <label class="text-success flex-grow-1">{{ __("Your company name") }}</label>
             <div class="field-value">
                 {{ user.company }}
             </div>
         </div>
         <div class="d-flex">
-            <label class="text-success flex-grow-1">Your phone number</label>
+            <label class="text-success flex-grow-1">{{ __("Your phone number") }}</label>
             <div class="field-value">
                 {{ user.phone }}
             </div>
@@ -37,7 +37,7 @@
     <div class="editor-edit collapse {{ collapseClass }}">
         <div class="row">
             <div class="col-12 mb-2">
-                <label for="inputCompany" class="form-label">Company name</label>
+                <label for="inputCompany" class="form-label">{{ __("Company name") }}</label>
                 <input
                     name="company"
                     type="text"
@@ -49,7 +49,7 @@
         </div>
         <div class="row">
             <div class="col-12 mb-2">
-                <label for="inputPhone" class="form-label">Phone number</label>
+                <label for="inputPhone" class="form-label">{{ __("Phone number") }}</label>
                 <input
                     name="phone"
                     type="text"
@@ -64,14 +64,14 @@
                 class="btn btn-primary"
                 data-attach-loading
                 type="submit">
-                Save
+                {{ __("Save") }}
             </button>
             <button
                 class="btn btn-link"
                 data-bs-toggle="collapse"
                 data-bs-target=".{{ collapseClass }}"
                 type="reset">
-                Cancel
+                {{ __("Cancel") }}
             </button>
         </div>
     </div>

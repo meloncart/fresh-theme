@@ -5,13 +5,13 @@
 {% if sessions %}
     <div>
         <div class="section-title border-bottom d-flex">
-            <h5 class="h4 flex-grow-1">Browser sessions ({{ sessions|length }})</h5>
+            <h5 class="h4 flex-grow-1">{{ __("Browser sessions") }} ({{ sessions|length }})</h5>
             <button
                 type="button"
                 class="btn btn-outline-secondary btn-sm"
                 data-bs-toggle="collapse"
                 data-bs-target=".{{ collapseClass }}">
-                Edit
+                {{ __("Edit") }}
             </button>
         </div>
 
@@ -36,7 +36,7 @@
                     data-request-update="{ 'account/popup-account-sessions': '#siteModalContent' }"
                     data-bs-toggle="modal"
                     data-bs-target="#siteModal">
-                    Log out other devices
+                    {{ __("Log out other devices") }}
                 </button>
             </div>
         </div>
@@ -64,10 +64,10 @@
 
                     {% if session.is_current_device %}
                         <strong class="text-success">
-                            This device
+                            {{ __("This device") }}
                         </strong>
                     {% else %}
-                        Last active {{ session.last_active }}
+                        {{ __("Last active") }} {{ session.last_active }}
                     {% endif %}
                 </div>
             </div>

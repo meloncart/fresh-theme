@@ -14,6 +14,6 @@
     </div>
 {% else %}
     <div class="alert alert-warning" role="alert">
-        <p class="mb-0">The product group <code>{{ groupCode }}</code> was not found. Please create this group in the Admin Panel using the <strong>Shop → Products → Product Groups</strong> page.</p>
+        <p class="mb-0">{{ __("The product group") }} <code>{{ groupCode }}</code> {{ __("was not found. Please create this group in the Admin Panel using the") }} <strong>{{ __("Shop → Products → Product Groups") }}</strong> {{ __("page.") }}</p>
     </div>
 {% endif %}

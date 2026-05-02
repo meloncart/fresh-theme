@@ -20,16 +20,16 @@
     <div class="modal-header">
         <h5 class="modal-title h4">
             {% if address %}
-                Update Address
+                {{ __("Update Address") }}
             {% else %}
-                Add a New Address
+                {{ __("Add a New Address") }}
             {% endif %}
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
     </div>
     <div class="modal-body">
         <p>
-            Please fill in the address information below.
+            {{ __("Please fill in the address information below.") }}
         </p>
         <div class="row g-3">
             <div class="col-12">
@@ -38,7 +38,7 @@
                     name="first_name"
                     type="text"
                     class="form-control"
-                    placeholder="First name"
+                    placeholder="{{ __("First name") }}"
                     value="{{ address.first_name }}"
                     required />
             </div>
@@ -47,7 +47,7 @@
                     name="last_name"
                     type="text"
                     class="form-control"
-                    placeholder="Last name"
+                    placeholder="{{ __("Last name") }}"
                     value="{{ address.last_name }}"
                     required />
             </div>
@@ -57,7 +57,7 @@
                     type="text"
                     class="form-control"
                     value="{{ address.company_name }}"
-                    placeholder="Business Name" />
+                    placeholder="{{ __("Business Name") }}" />
             </div>
             <div class="col-12">
                 <input
@@ -65,7 +65,7 @@
                     type="text"
                     class="form-control"
                     value="{{ address.address_line1 }}"
-                    placeholder="Address" />
+                    placeholder="{{ __("Address") }}" />
             </div>
             <div class="col-md-6">
                 <input
@@ -73,7 +73,7 @@
                     type="text"
                     class="form-control"
                     value="{{ address.city }}"
-                    placeholder="City" />
+                    placeholder="{{ __("City") }}" />
             </div>
             <div class="col-md-6">
                 <input
@@ -81,7 +81,7 @@
                     type="text"
                     class="form-control"
                     value="{{ address.zip }}"
-                    placeholder="Zip / Postal Code" />
+                    placeholder="{{ __("Zip / Postal Code") }}" />
             </div>
             <div class="col-12">
                 {% partial 'account/select-country' countryId=address.country_id %}
@@ -100,7 +100,7 @@
                         {{ address.is_default ? 'checked' }}
                         id="isDefaultAddressCheckbox" />
                     <label class="form-check-label" for="isDefaultAddressCheckbox">
-                        Set as default address
+                        {{ __("Set as default address") }}
                     </label>
                 </div>
             </div>
@@ -111,13 +111,13 @@
             type="button"
             class="btn btn-secondary"
             data-bs-dismiss="modal">
-            Cancel
+            {{ __("Cancel") }}
         </button>
         <button
             class="btn btn-success"
             data-attach-loading
             type="submit">
-            Save Address
+            {{ __("Save Address") }}
         </button>
     </div>
 

@@ -22,11 +22,11 @@ module[] = 'controls/checkout-form.js'
 {% else %}
     <div class="container container-padded">
         <h1>
-            Checkout
+            {{ __("Checkout") }}
         </h1>
-        <p>Your shopping cart is empty.</p>
+        <p>{{ __("Your shopping cart is empty.") }}</p>
         <a href="{{ 'shop/index'|page }}" class="btn btn-dark btn-pill">
-            Continue Shopping
+            {{ __("Continue Shopping") }}
         </a>
     </div>
 {% endif %}

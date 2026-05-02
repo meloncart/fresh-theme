@@ -2,13 +2,13 @@
     <li class="list-group-item px-0">
         <div class="row align-items-center">
             <div class="col-7">
-                <span>Product</span>
+                <span>{{ __("Product") }}</span>
             </div>
             <div class="col-3 text-center">
-                <span>Quantity</span>
+                <span>{{ __("Quantity") }}</span>
             </div>
             <div class="col-2 text-lg-end text-start text-md-end">
-                <span>Total</span>
+                <span>{{ __("Total") }}</span>
             </div>
         </div>
     </li>
@@ -66,12 +66,12 @@
                             <a
                                 href="#"
                                 data-request="onRemoveFromCart"
-                                data-request-confirm="Remove this item from your cart?"
+                                data-request-confirm="{{ __("Remove this item from your cart?") }}"
                                 data-request-data="{ key: '{{ item.key }}' }"
                                 data-request-update="{ 'shop-checkout/cart-view': '#cartPartial', 'shop-checkout/mini-cart': '#miniCart' }"
                                 class="text-decoration-none text-inherit">
                                 <i class="bi bi-trash3"></i>
-                                <span class="text-muted">Remove</span>
+                                <span class="text-muted">{{ __("Remove") }}</span>
                             </a>
                         </div>
                     {% endif %}
@@ -89,7 +89,7 @@
                     <li class="list-group-item py-2 px-0 bundle-totals-row">
                         <div class="row align-items-center">
                             <div class="col-10 text-end">
-                                <span class="fw-bold">Bundle Total</span>
+                                <span class="fw-bold">{{ __("Bundle Total") }}</span>
                             </div>
                             <div class="col-2 text-lg-end text-start text-md-end col-md-2 cart-price">
                                 <span class="fw-bold">{{ masterItem.getBundleTotalPrice(itemList)|currency }}</span>

@@ -7,7 +7,7 @@
         {% if itemProduct.allow_manual_quantity %}
             {% partial 'ui/quantity-input' name=controlName value=currentQty class='input-group-sm' %}
         {% else %}
-            <span class="small text-muted">Qty: {{ currentQty }}</span>
+            <span class="small text-muted">{{ __("Qty:") }} {{ currentQty }}</span>
         {% endif %}
     </div>
     <div>
