@@ -11,14 +11,14 @@
             {% endif %}
         </div>
         <div class="col-9">
-            {% if bundleProduct.options is not empty %}
+            {% if bundleProduct.all_options is not empty %}
                 {% partial 'shop-product/bundle-product-options'
                     bundleItem=bundleItem
                     itemProduct=itemProduct
                     bundleProduct=bundleProduct %}
             {% endif %}
 
-            {% if bundleProduct.extras is not empty %}
+            {% if bundleProduct.all_extras is not empty %}
                 {% partial 'shop-product/bundle-product-extras'
                     bundleItem=bundleItem
                     itemProduct=itemProduct
