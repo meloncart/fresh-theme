@@ -1,4 +1,4 @@
-{% if bundleProduct.extras is not empty %}
+{% if bundleProduct.all_extras is not empty %}
     {% set controlName = 'bundle_items[' ~ bundleItem.id ~ '][extras][' ~ itemProduct.id ~ ']' %}
     <div class="bundle-product-extras mb-2">
         {% for extra in bundleProduct.all_extras %}

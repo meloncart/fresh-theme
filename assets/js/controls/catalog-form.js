@@ -1,6 +1,7 @@
 class CatalogForm extends oc.ControlBase {
     connect() {
         this.listen('change', '[data-filter-manufacturer]', this.onFilterProducts);
+        this.listen('change', '[data-filter-facet]', this.onFilterProducts);
         this.listen('change', '[data-filter-rating]', this.onFilterProducts);
         this.listen('change', '[data-control="price-slider"]', this.onFilterProducts);
     }
@@ -22,6 +23,26 @@ class CatalogForm extends oc.ControlBase {
         });
         if (ratings.length) {
             data.ratings = ratings;
+        }
+
+        const filters = {};
+        this.element.querySelectorAll('[data-filter-facet]').forEach(function(el) {
+            const code = el.dataset.filterFacet;
+            let value;
+            if (el.tagName === 'SELECT') {
+                value = el.value;
+            } else if (el.checked) {
+                value = el.value;
+            }
+            if (value) {
+                if (!filters[code]) {
+                    filters[code] = [];
+                }
+                filters[code].push(value);
+            }
+        });
+        if (Object.keys(filters).length) {
+            data.filters = filters;
         }
 
         const priceMin = this.element.querySelector('[data-filter-price-min]');

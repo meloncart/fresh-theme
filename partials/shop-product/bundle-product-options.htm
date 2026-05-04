@@ -1,7 +1,7 @@
-{% if bundleProduct.options is not empty %}
+{% if bundleProduct.all_options is not empty %}
     {% set controlName = 'bundle_items[' ~ bundleItem.id ~ '][options][' ~ itemProduct.id ~ ']' %}
     <div class="bundle-product-options mb-2">
-        {% for option in bundleProduct.options %}
+        {% for option in bundleProduct.all_options %}
             <div class="row align-items-center mb-1">
                 <div class="col-4">
                     <span class="small fw-bold">{{ option.name }}</span>

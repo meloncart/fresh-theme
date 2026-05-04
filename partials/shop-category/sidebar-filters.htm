@@ -1,0 +1,92 @@
+{% if category %}
+    {% set facets = category.availableFilters() %}
+{% endif %}
+{% if facets is not empty %}
+    {% for facet in facets %}
+        <div class="mb-8">
+            <h5 class="mb-3">
+                {{ facet.name }}
+            </h5>
+            {% if facet.type == 'dropdown' %}
+                <select
+                    class="form-select"
+                    data-filter-facet="{{ facet.code }}">
+                    <option value="">
+                        All
+                    </option>
+                    {% for item in facet.values %}
+                        <option value="{{ item.value }}">
+                            {{ item.value }} ({{ item.count }})
+                        </option>
+                    {% endfor %}
+                </select>
+            {% elseif facet.type == 'radio' %}
+                <div class="form-check mb-2">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        value=""
+                        id="filter_{{ facet.code }}_all"
+                        name="filter_{{ facet.code }}"
+                        data-filter-facet="{{ facet.code }}"
+                        checked>
+                    <label class="form-check-label" for="filter_{{ facet.code }}_all">
+                        All
+                    </label>
+                </div>
+                {% for item in facet.values %}
+                    <div class="form-check mb-2">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            value="{{ item.value }}"
+                            id="filter_{{ facet.code }}_{{ loop.index }}"
+                            name="filter_{{ facet.code }}"
+                            data-filter-facet="{{ facet.code }}">
+                        <label class="form-check-label" for="filter_{{ facet.code }}_{{ loop.index }}">
+                            {{ item.value }}
+                            <small class="text-muted">
+                                ({{ item.count }})
+                            </small>
+                        </label>
+                    </div>
+                {% endfor %}
+            {% elseif facet.type == 'color' %}
+                <div class="d-flex flex-wrap gap-2">
+                    {% for item in facet.values %}
+                        <input
+                            type="checkbox"
+                            class="btn-check"
+                            value="{{ item.value }}"
+                            id="filter_{{ facet.code }}_{{ loop.index }}"
+                            data-filter-facet="{{ facet.code }}"
+                            autocomplete="off">
+                        <label
+                            class="btn btn-outline-secondary btn-sm"
+                            for="filter_{{ facet.code }}_{{ loop.index }}"
+                            title="{{ item.value }} ({{ item.count }})">
+                            {{ item.value }}
+                        </label>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {% for item in facet.values %}
+                    <div class="form-check mb-2">
+                        <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value="{{ item.value }}"
+                            id="filter_{{ facet.code }}_{{ loop.index }}"
+                            data-filter-facet="{{ facet.code }}">
+                        <label class="form-check-label" for="filter_{{ facet.code }}_{{ loop.index }}">
+                            {{ item.value }}
+                            <small class="text-muted">
+                                ({{ item.count }})
+                            </small>
+                        </label>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endif %}

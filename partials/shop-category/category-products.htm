@@ -29,7 +29,8 @@
             manufacturers: post('manufacturers'),
             ratings: post('ratings'),
             priceMin: post('priceMin'),
-            priceMax: post('priceMax')
+            priceMax: post('priceMax'),
+            filters: post('filters', [])
         } %}
 
         {% if searchTerm %}
