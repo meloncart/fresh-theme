@@ -121,7 +121,7 @@ isDefault = 1
         </div>
         <div class="col-lg-5 col-12 d-none d-md-block border-start py-5">
             <div class="ps-4" id="shopCheckoutOrderSummary">
-                {% partial 'shop-checkout/order-summary' items=order.items hideCoupon=true %}
+                {% partial 'shop-checkout/order-summary' items=order.items isFinalized=true %}
             </div>
         </div>
     </div>

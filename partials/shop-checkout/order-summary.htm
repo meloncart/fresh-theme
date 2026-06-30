@@ -47,7 +47,7 @@
     {% endfor %}
 </ul>
 
-{% if not hideCoupon %}
+{% if not isFinalized %}
     <div class="card mb-3">
         <div class="card-body py-2">
             {% if couponCode %}
@@ -115,20 +115,22 @@
                 </span>
             </li>
         {% endif %}
-        <li class="list-group-item d-flex justify-content-between align-items-center small">
-            <div class="me-auto">
-                <div>
-                    {{ __("Shipping") }}
+        {% if isFinalized ? order.final_shipping_quote : true %}
+            <li class="list-group-item d-flex justify-content-between align-items-center small">
+                <div class="me-auto">
+                    <div>
+                        {{ __("Shipping") }}
+                    </div>
                 </div>
-            </div>
-            {% if not hasShippingAddress %}
-                <small class="text-muted">{{ __("Enter address") }}</small>
-            {% elseif not hasShippingQuote %}
-                <small class="text-muted">{{ __("Select shipping") }}</small>
-            {% else %}
-                <span>{{ order.final_shipping_quote|currency }}</span>
-            {% endif %}
-        </li>
+                {% if isFinalized or hasShippingQuote %}
+                    <span>{{ order.final_shipping_quote|currency }}</span>
+                {% elseif not hasShippingAddress %}
+                    <small class="text-muted">{{ __("Enter address") }}</small>
+                {% else %}
+                    <small class="text-muted">{{ __("Select shipping") }}</small>
+                {% endif %}
+            </li>
+        {% endif %}
         {% if order.credit_applied > 0 %}
             <li class="list-group-item d-flex justify-content-between small text-success">
                 <div class="me-auto">
