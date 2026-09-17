@@ -21,17 +21,17 @@
                                 <i class="bi bi-chevron-left"></i> {{ __("Back to Shopping Cart") }}
                             </a>
                             <button
-                                type="submit "
+                                type="submit"
                                 data-request="onRefreshCheckout"
-                                data-request-data="{ checkout_step: 'shipping' }"
+                                data-request-data="{ checkout_step: '{{ shippingRequired ? 'shipping' : 'payment' }}' }"
                                 data-request-update="{ 'shop-checkout/checkout-view': '#shopCheckoutView' }"
                                 data-attach-loading
                                 data-request-flash
                                 class="btn btn-lg btn-primary">
-                                {{ __("Continue to Shipping") }}
+                                {{ shippingRequired ? __("Continue to Shipping") : __("Continue to Payment") }}
                             </button>
                         </div>
-                    {% elseif checkoutStep == 'shipping' %}
+                    {% elseif checkoutStep == 'shipping' and shippingRequired %}
                         <div id="shopCheckoutStepShipping">
                             {% partial 'shop-checkout/checkout-step-shipping' %}
                         </div>
@@ -68,10 +68,10 @@
                             <a
                                 href="#"
                                 data-request="onRefreshCheckout"
-                                data-request-data="{ checkout_step: 'shipping', skip_validation: true }"
+                                data-request-data="{ checkout_step: '{{ shippingRequired ? 'shipping' : 'details' }}', skip_validation: true }"
                                 data-request-update="{ 'shop-checkout/checkout-view': '#shopCheckoutView' }"
                                 class="btn btn-link">
-                                <i class="bi bi-chevron-left"></i> {{ __("Return to Shipping") }}
+                                <i class="bi bi-chevron-left"></i> {{ shippingRequired ? __("Return to Shipping") : __("Return to Details") }}
                             </a>
                         </div>
                     {% endif %}

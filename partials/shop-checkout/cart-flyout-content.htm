@@ -7,27 +7,28 @@
             {{ __("Your cart is empty") }}
         </h6>
         <a href="{{ 'shop/index'|page }}" class="btn btn-dark btn-sm" data-bs-dismiss="offcanvas">
+            <i class="bi bi-arrow-left me-1"></i>
             {{ __("Continue Shopping") }}
         </a>
     </div>
 {% else %}
-    <ul class="list-group list-group-flush flex-grow-1 overflow-auto">
+    <ul class="list-group list-group-flush overflow-auto px-3">
         {% for item in items %}
             {% set product = item.product %}
             {% set isBundleChild = item.isBundleItem() %}
-            {% set imgSize = isBundleChild ? 40 : 64 %}
-            <li class="list-group-item py-3 border-top {{ isBundleChild ? 'bundle-child-item' : 'ps-0' }}">
+            {% set imgSize = isBundleChild ? 40 : 72 %}
+            <li class="list-group-item py-3 border-top {{ isBundleChild ? 'bundle-child-item' }}">
                 <div class="row align-items-center">
                     <div class="col-7">
                         <div class="d-flex">
-                            <a href="{{ product.pageUrl('shop/product') }}" class="flex-shrink-0">
+                            <a href="{{ product.pageUrl('shop/product') }}" class="flex-shrink-0 cart-flyout-thumb">
                                 {% if product.images is empty %}
-                                    <img src="{{ 'assets/images/default-post.png'|theme }}" width="{{ imgSize }}" height="{{ imgSize }}" style="object-fit: cover;" />
+                                    <img src="{{ 'assets/images/default-post.png'|theme }}" width="{{ imgSize }}" height="{{ imgSize }}" />
                                 {% else %}
-                                    <img src="{{ product.images.first|resize(imgSize, imgSize, { mode: 'crop' }) }}" alt="{{ product.name }}" width="{{ imgSize }}" height="{{ imgSize }}" style="object-fit: cover;" />
+                                    <img src="{{ product.images.first|resize(imgSize, imgSize, { mode: 'crop' }) }}" alt="{{ product.name }}" width="{{ imgSize }}" height="{{ imgSize }}" />
                                 {% endif %}
                             </a>
-                            <div class="ms-3">
+                            <div class="ms-3 min-width-0">
                                 <a href="{{ product.pageUrl('shop/product') }}" class="text-inherit">
                                     <h6 class="mb-0">
                                         {{ product.name }}
@@ -92,11 +93,13 @@
             </li>
         {% endfor %}
     </ul>
-    <div class="d-flex justify-content-between p-3 mt-auto border-top">
+    <div class="d-flex justify-content-between p-3 border-top">
         <a href="{{ 'shop/index'|page }}" class="btn btn-primary" data-bs-dismiss="offcanvas">
+            <i class="bi bi-arrow-left me-1"></i>
             {{ __("Continue Shopping") }}
         </a>
         <a href="{{ 'shop/cart'|page }}" class="btn btn-dark">
+            <i class="bi bi-cart3 me-1"></i>
             {{ __("View Cart") }}
         </a>
     </div>

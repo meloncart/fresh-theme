@@ -37,14 +37,20 @@
                         {% endif %}
                     </div>
                     <div class="mt-2">
-                        <button
-                            data-request="onAddToCart"
-                            data-request-data="{ product_baseid: '{{ product.baseid }}' }"
-                            data-request-update="{ 'shop-checkout/mini-cart': '#miniCart' }"
-                            data-request-flash
-                            class="btn btn-primary btn-sm">
-                            {{ __("Add to Cart") }}
-                        </button>
+                        {% if product.has_variants %}
+                            <a href="{{ product.pageUrl('shop/product') }}" class="btn btn-outline-primary btn-sm">
+                                {{ __("Select options") }}
+                            </a>
+                        {% else %}
+                            <button
+                                data-request="onAddToCart"
+                                data-request-data="{ product_baseid: '{{ product.baseid }}' }"
+                                data-request-update="{ 'shop-checkout/mini-cart': '#miniCart' }"
+                                data-request-flash
+                                class="btn btn-primary btn-sm">
+                                {{ __("Add to Cart") }}
+                            </button>
+                        {% endif %}
                     </div>
                 </div>
             </div>
