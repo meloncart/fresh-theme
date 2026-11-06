@@ -1,0 +1,86 @@
+{# Product structured data, priced in the same currency the page displays #}
+{% set activeCurrency = this.site.currency ?: currency() %}
+{% set decimalScale = activeCurrency.decimal_scale %}
+{% set divisor = 10 ** decimalScale %}
+{% set productUrl = product.pageUrl('shop/product') %}
+
+{# Availability and price range, across enabled variants when the product uses them #}
+{% if product.use_variants %}
+    {% set lowPrice = null %}
+    {% set highPrice = null %}
+    {% set offerCount = 0 %}
+    {% set isInStock = false %}
+    {% for variant in product.variants %}
+        {% if variant.is_enabled %}
+            {% set lowPrice = lowPrice is null ? variant.display_price : min(lowPrice, variant.display_price) %}
+            {% set highPrice = highPrice is null ? variant.display_price : max(highPrice, variant.display_price) %}
+            {% set offerCount = offerCount + 1 %}
+            {% if not variant.isOutOfStock() %}
+                {% set isInStock = true %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+{% else %}
+    {% set lowPrice = product.display_price %}
+    {% set isInStock = product.in_stock %}
+{% endif %}
+
+{% set availability = isInStock ? 'InStock' : (product.allow_pre_order ? 'PreOrder' : 'OutOfStock') %}
+
+{% set schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    'name': product.title ?: product.name,
+    'url': productUrl,
+} %}
+
+{% set description = product.short_description ?: product.description|replace({ '</p>': '</p> ' })|striptags|trim %}
+{% if description %}
+    {% set schema = schema|merge({ 'description': description }) %}
+{% endif %}
+
+{% if product.images is not empty %}
+    {% set schema = schema|merge({ 'image': product.images|map(image => image.path) }) %}
+{% endif %}
+
+{% if product.sku %}
+    {% set schema = schema|merge({ 'sku': product.sku }) %}
+{% endif %}
+
+{% if product.manufacturer %}
+    {% set schema = schema|merge({ 'brand': { '@type': 'Brand', 'name': product.manufacturer.name } }) %}
+{% endif %}
+
+{% if lowPrice is not null %}
+    {% if product.use_variants %}
+        {% set offers = {
+            '@type': 'AggregateOffer',
+            'lowPrice': (lowPrice / divisor)|number_format(decimalScale, '.', ''),
+            'highPrice': (highPrice / divisor)|number_format(decimalScale, '.', ''),
+            'offerCount': offerCount,
+        } %}
+    {% else %}
+        {% set offers = {
+            '@type': 'Offer',
+            'url': productUrl,
+            'price': (lowPrice / divisor)|number_format(decimalScale, '.', ''),
+        } %}
+    {% endif %}
+
+    {% set schema = schema|merge({ 'offers': offers|merge({
+        'priceCurrency': activeCurrency.code,
+        'availability': 'https://schema.org/' ~ availability,
+    }) }) %}
+{% endif %}
+
+{% if product.reviews_count > 0 %}
+    {% set schema = schema|merge({ 'aggregateRating': {
+        '@type': 'AggregateRating',
+        'ratingValue': product.reviews_rating|round(1),
+        'reviewCount': product.reviews_count,
+    } }) %}
+{% endif %}
+
+<script type="application/ld+json">
+    {{ schema|json_encode|raw }}
+</script>

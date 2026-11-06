@@ -21,6 +21,10 @@ vars[activeNavLink] = 'shop'
     {% do redirect(this|page({ slug: product.slug }), 301) %}
 {% endif %}
 
+{% put meta %}
+    {% partial 'shop-product/product-schema' %}
+{% endput %}
+
 <div class="container container-padded">
     <div class="mb-4">
         {% partial 'shop/breadcrumb' object=product %}
