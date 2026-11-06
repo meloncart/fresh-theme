@@ -3,3 +3,4 @@ v1.0.2: Adds store credit support
 v1.0.3: Fixes bug on post orders payment
 v1.2.0: Added faceted navigation filters on category pages
 v1.2.1: Fixes registration and auto login for users at checkout
+v1.3.0: Adds product structured data to the product page
