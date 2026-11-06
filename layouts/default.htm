@@ -20,7 +20,7 @@ description = "Default layout"
         {% if this.page.meta_image %}
             <meta property="og:image" content="{{ this.page.meta_image | media }}">
         {% endif %}
-        <meta property="og:url" content="{{ this.page.url }}">
+        <meta property="og:url" content="{{ ''|page }}">
 
         <!-- Twitter Card -->
         <meta name="twitter:card" content="{{ this.page.meta_image ? 'summary_large_image' : 'summary' }}">

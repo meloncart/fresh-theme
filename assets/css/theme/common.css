@@ -18,10 +18,14 @@
 }
 
 .btn {
+    --bs-btn-font-weight: 600;
+}
+
+/* Skips .btn-sm and .btn-lg so they keep their own sizes */
+.btn:where(:not(.btn-sm, .btn-lg)) {
     --bs-btn-padding-y: 0.55rem;
     --bs-btn-padding-x: 1rem;
     --bs-btn-font-size: 0.875rem;
-    --bs-btn-font-weight: 600;
     --bs-btn-border-radius: var(--bs-border-radius);
 }
 
