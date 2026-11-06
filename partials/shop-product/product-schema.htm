@@ -1,5 +1,5 @@
 {# Product structured data, priced in the same currency the page displays #}
-{% set activeCurrency = this.site.currency ?: currency() %}
+{% set activeCurrency = this.site.hard_currency %}
 {% set decimalScale = activeCurrency.decimal_scale %}
 {% set divisor = 10 ** decimalScale %}
 {% set productUrl = product.pageUrl('shop/product') %}

@@ -3,7 +3,7 @@
 {% else %}
     {% set priceRange = catalog.priceRange() %}
 {% endif %}
-{% set cur = currency() %}
+{% set cur = this.site.hard_currency %}
 {% if priceRange.max > priceRange.min %}
     <div
         data-control="price-slider"

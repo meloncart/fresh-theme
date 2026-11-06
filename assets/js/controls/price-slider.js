@@ -11,7 +11,7 @@ class PriceSlider extends oc.ControlBase {
     connect() {
         var min = this.config.min || 0,
             max = this.config.max || 100000,
-            scale = this.config.decimalScale || 2,
+            scale = this.config.decimalScale ?? 2,
             step = Math.pow(10, scale);
 
         this.scale = scale;
